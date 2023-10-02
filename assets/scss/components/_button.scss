@@ -1,0 +1,27 @@
+.theme-btn {
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 2.5em;
+  letter-spacing: 1.3px;
+  color: #FFFFFF;
+  fill: #FFFFFF;
+  background-color: #1CBEC0;
+  border-style: solid;
+  border-width: 2px 2px 2px 2px;
+  border-color: #1CBEC0;
+  border-radius: 5em 5em 5em 5em;
+  padding: 1.15em 3em;
+  display: inline-block;
+  transition: all .3s;
+  i {
+    font-size: 14px;
+    margin-right: 8px;
+  }
+
+  &:hover {
+    color: #000000;
+    background-color: #FFFFFF;
+    box-shadow: 0 12px 28px rgb(0 0 0 / 12%);
+  }
+}

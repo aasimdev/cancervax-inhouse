@@ -1,0 +1,111 @@
+.invest-bar {
+    background-color: #1d8f97;
+    padding: 0 45px;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+
+    &-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+
+        p {
+            font-size: 28px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        a {
+            background: #fff;
+            padding: 10px;
+            font-size: 17px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+
+    &-content {
+        position: relative;
+        padding: 8px 0;
+    }
+
+    .tSocial {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+.navbar {
+    padding: 15px 30px;
+    background: transparent;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+
+    .navbar-brand {
+        max-width: 300px;
+    }
+
+    .navbar-nav {
+        .nav-link {
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 1.821em;
+            color: #FFFFFFCC;
+            padding-right: 15px;
+            padding-left: 15px;
+
+            &:hover,
+            &.active {
+                color: #2ABAC2;
+            }
+        }
+    }
+
+}
+
+.navbar-dark .navbar-toggler {
+    color: #fff;
+    border: 0;
+
+    &:focus {
+        outline: 0;
+        box-shadow: none;
+    }
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+}
+.socialHeader{
+    position: absolute;
+    z-index: 3;
+    padding: 6px 48px 0;
+    width: 100%;
+}
+.tSocial{
+    text-align: right;
+    a {
+        color: #fff;
+    font-size: 20px;
+
+        &:hover {
+            color: #FFFFFF;
+        }
+
+        &+a {
+            margin-left: 12px;
+        }
+    }
+}
+
+
+.dark-header{
+    .navbar{
+        background: #06090e;
+    }
+}
