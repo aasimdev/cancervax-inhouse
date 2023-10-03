@@ -7,7 +7,7 @@ include('header.php'); ?>
 <section class="abtBanner">
     <div class="container">
         <div class="abtBanner-text">
-            <h1>CancerVAX is a pre-clinical biotechnology company working with
+            <h1 >CancerVAX is a pre-clinical biotechnology company working with
                 UCLA to develop immunotherapy cancer treatments that use the body’s
                 immune system to fight cancer. We aim to develop transformative
                 therapies to protect and improve people’s lives.</h1>
@@ -125,13 +125,16 @@ include('header.php'); ?>
 </section>
 
 <section class="coreTeam">
+
     <div class="container">
+    <h3 style="text-align:center;color:black;" >CancerVAX Team</h3>
         <div class="row justify-content-center">
+       
             <div class="col-md-6 col-xl-3">
                 <div class="team-box">
                     <div class="team-box-img">
                         <a href="#">
-                            <img src="./assets/img/Ryan-Davies.jpg" class="object-fit-cover" style="object-position: 100% 0;" alt="john">
+                            <img src="./assets/img/Ryan-Davies.png" class="object-fit-cover" style="object-position: 100% 0;" alt="john">
                         </a>
                     </div>
                     <h5>
@@ -149,7 +152,7 @@ include('header.php'); ?>
                 <div class="team-box">
                     <div class="team-box-img">
                         <a href="#">
-                            <img src="./assets/img/byron-cvax.jpg" class="object-fit-cover" alt="john">
+                            <img src="./assets/img/byron-cvax.png" class="object-fit-cover" alt="john">
                         </a>
                     </div>
                     <h5>
@@ -167,7 +170,7 @@ include('header.php'); ?>
                 <div class="team-box">
                     <div class="team-box-img">
                         <a href="#">
-                            <img src="./assets/img/lakey.jpg" class="object-fit-cover" style="    object-position: bottom;" alt="john">
+                            <img src="./assets/img/lakey.png" class="object-fit-cover" style="    object-position: bottom;" alt="john">
                         </a>
                     </div>
                     <h5>
@@ -185,7 +188,7 @@ include('header.php'); ?>
                 <div class="team-box">
                     <div class="team-box-img">
                         <a href="#">
-                            <img src="./assets/img/Lindsay-Mann.jpg" class="object-fit-cover" style="object-position: 100% 0;" alt="john">
+                            <img src="./assets/img/Lindsay-Mann.png" class="object-fit-cover" style="object-position: 100% 0;" alt="john">
                         </a>
                     </div>
                     <h5>
@@ -206,7 +209,7 @@ include('header.php'); ?>
 
 <section class="otherteam">
     <div class="container">
-        <h3>UCLA Team</h3>
+        <h3 style="text-align:center;" >UCLA Team</h3>
         <div class="row justify-content-center">
             <div class="col-md-6 col-xl-4">
                 <div class="team-box">

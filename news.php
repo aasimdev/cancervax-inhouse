@@ -98,6 +98,7 @@ include('header.php'); ?>
             <div class="col-lg-6">
                 <div class="news-item">
                     <a href="https://rescue.ceoblognation.com/2023/09/13/18-entrepreneurs-share-some-of-the-best-leadership-ceo-hacks-and-resources/" target="_blank"></a>
+                    <img src="./assets/img/news-logo-5.png" alt="news" class="news-logo-n">
                     <span>September 26, 2023</span>
                     <h3>18 Entrepreneurs Share Some of The Best Leadership CEO Hacks and Resources</h3>
                 </div>
@@ -105,6 +106,7 @@ include('header.php'); ?>
             <div class="col-lg-6">
                 <div class="news-item">
                     <a href="https://coruzant.com/health-tech/cancer-vaccines-where-are-we-now-and-where-are-we-going/" target="_blank"></a>
+                    <img src="./assets/img/news-logo-6.png" alt="news" class="news-logo-n">
                     <span>September 23, 2023</span>
                     <h3>Cancer Vaccines: Where are We Now and Where are We Going?</h3>
                 </div>
