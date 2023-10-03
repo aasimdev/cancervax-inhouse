@@ -2,7 +2,7 @@
 $GLOBALS['title'] = "CancerVAX CEO Ryan Davies Discussed Cancer Immunotherapy with UCLA Physician - Scientist - CancerVax";
 $GLOBALS['desc'] = "";
 $GLOBALS['keywords'] = "";
-include('header.php'); ?>
+include '../../header.php'; ?>
 
 <section class="news-detail">
     <div class="container">
@@ -42,4 +42,4 @@ include('header.php'); ?>
 </section>
 
 <?php
-include('footer.php'); ?>
+include '../../footer.php'; ?>

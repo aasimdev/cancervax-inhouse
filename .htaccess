@@ -2,3 +2,5 @@ RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php [NC,L] 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^videos/ceo-podcast/(.*)$ videos/ceo-podcast/index.php [L,QSA]
