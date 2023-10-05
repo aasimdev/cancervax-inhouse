@@ -19,19 +19,30 @@
         $keywords = $GLOBALS['keywords'];
     } else {
         $keywords = "";
-    } ?>
+    }
+    // Get the current domain URL
+    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+    $domain = $_SERVER['HTTP_HOST'];
+    $current_url = $protocol . "://" . $domain;
+
+    // Define your website name
+    $website_name = "cancervax-inhouse";
+
+    // Combine the domain URL and website name
+    $full_url = $current_url . "/" . $website_name;
+    ?>
     <title><?php echo $title; ?></title>
-    <link rel="apple-touch-icon" sizes="114x114" href="./assets/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="./assets/img/favicon/site.webmanifest">
-    <link rel="mask-icon" href="./assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo  $full_url; ?>/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo  $full_url; ?>/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo  $full_url; ?>/assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?php echo  $full_url; ?>/assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="<?php echo  $full_url; ?>/assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/slick.min.css">
-    <link rel="stylesheet" href="./assets/css/slick-theme.min.css">
-    <link rel="stylesheet" href="./assets/css/style.min.css">
+    <link rel="stylesheet" href="<?php echo  $full_url; ?>/assets/css/slick.min.css">
+    <link rel="stylesheet" href="<?php echo  $full_url; ?>/assets/css/slick-theme.min.css">
+    <link rel="stylesheet" href="<?php echo  $full_url; ?>/assets/css/style.min.css">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7D9TX20JND"></script>
@@ -123,7 +134,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
-                <img src="./assets/img/logo.png" alt="logo">
+                <img src="<?php echo  $full_url; ?>/assets/img/logo.png" alt="logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
