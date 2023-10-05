@@ -50,7 +50,7 @@ if($showAllVideo == 1){
         </div>
         <div class="abtceo-wrap">
             <div class="abt-ceo-img">
-                <img src="./assets/img/byron-cvax.jpg" alt="ryan">
+                <img src="../../assets/img/byron-cvax.png" alt="ryan">
             </div>
             <p>Watch our CMO, Byron Elton, cover the most important news and developments in the cancer industry</p>
         </div>
@@ -61,27 +61,25 @@ if($showAllVideo == 1){
     <div class="container">
         <div class="row">
             <?php
-            $filteredNewsCommentary = array_filter($videos, function ($item) {
+            $latestNewsCommentary = array_filter($videos, function ($item) {
                 return $item['category'] === 'news-commentary' && $item['scope'] === 'public';
             });
-            foreach ($filteredNewsCommentary as $video) {
-                $videoTitle = $video['title'];
-                $videoID = $video['videoID'];
-                $videoDate = $video['date'];
-                echo '
-                <div class="col-lg-6">
-                    <div class="cchat">
-                        <div class="cchat-box mb-4">
-                                <a class="popup-youtube getThumbnail" href="https://www.youtube.com/watch?v=' . $videoID . '"></a>
-                                <div class="cchat-thumbnail thumbnail-overlay">
-                                </div>
-                                <i class="far fa-play-circle"></i>
-                            </a>
-                        </div>
-                        <p class="mt-0"> '. $videoDate .' - ' .  $videoTitle . '</p>
+            foreach ($latestNewsCommentary as $video) {
+                $temp1 = strtolower($video['title']);
+                $string = str_replace(' ', '-', $temp1);
+                echo "<div class=\"col-lg-6\">
+                <div class=\"cchat\">
+                <div class=\"cchat-box mb-4\">
+                <a class=\"popup-youtube getThumbnail\" href=\"https://www.youtube.com/watch?v={$video['videoID']}\"></a>
+                <a href=\"{$string}\"></a>
+                    <div class=\"cchat-thumbnail thumbnail-overlay\">
+                    <img src=\"//img.youtube.com/vi/{$video['videoID']}/maxresdefault.jpg\" alt=\"Thumbnail\">
                     </div>
+                    <i class=\"far fa-play-circle\"></i>
+                </div>            
+                <p class=\"mt-0\" >{$video['date']} - {$video['title']}</p>
                 </div>
-                ';
+                </div>";
             }
             ?>
            
@@ -99,19 +97,19 @@ else{
             $videoTitle = $video['title'];
             $videoID = $video['videoID'];
             $videoDate = $video['date'];
+           
             echo '
-            <div class="col-lg-6">
-                <div class="cchat">
-                    <div class="cchat-box mb-4">
-                        <a class="popup-youtube getThumbnail" href="https://www.youtube.com/watch?v=' . $videoID . '"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
-                    </a>
-                    </div>
-                    <p class="mt-0">' . $videoDate . ' - ' . $videoTitle . '</p>
+            <section class="podcast-detail">
+            <div class="container">
+                <div class="podcast-detail-wrap">
+                <h1>'.$videoDate.' - ' . $videoTitle . ' </h1>
+                    <p></p>
+                     <div class="podcast-video">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/' . $videoID . '?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div> 
                 </div>
             </div>
+        </section>
             ';
         }
     } else {

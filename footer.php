@@ -1,5 +1,15 @@
 <?php
 $page_name = basename($_SERVER['PHP_SELF']);
+ // Get the current domain URL
+ $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+ $domain = $_SERVER['HTTP_HOST'];
+ $current_url = $protocol . "://" . $domain;
+
+ // Define your website name
+ $website_name = "cancervax-inhuose";
+
+ // Combine the domain URL and website name
+ $full_url = $current_url . "/" . $website_name;
 if ($page_name != "index.php") {
 ?>
     <section class="newsletter">
@@ -32,7 +42,7 @@ if ($page_name != "index.php") {
                         <div class="col-sm-4">
                             <div class="footer-logo">
                                 <a href="/">
-                                    <img src="./assets/img/C-01-1.png" alt="logo">
+                                    <img src="<?php echo  $full_url; ?>./assets/img/C-01-1.png" alt="logo">
                                 </a>
                             </div>
                         </div>

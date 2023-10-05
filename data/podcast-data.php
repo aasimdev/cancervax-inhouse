@@ -190,13 +190,6 @@ $videos = [
         'scope' => "public"
     ],
     [
-        'title' => "Paul Chretien Colorectal Cancer",
-        'videoID' => "0Bga027vcFc",
-        'date' => "August 15, 2023",
-        'category' => "cancer-survivor-stories",
-        'scope' => "public"
-    ],
-    [
         'title' => "Andrew Van Noy Retinoblastoma",
         'videoID' => "y9gaBzk8c5g",
         'date' => "July 25, 2023",
@@ -288,7 +281,7 @@ $videos = [
         'scope' => "public"
     ],
     [
-        'title' => "Ideas are like seeds—they need time to grow.",
+        'title' => "Ideas are like seeds they need time to grow.",
         'videoID' => "-L1nPAU1_lk",
         'date' => "Mar 24, 2023",
         'category' => "short-videos",

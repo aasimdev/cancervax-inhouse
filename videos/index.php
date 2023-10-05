@@ -19,7 +19,7 @@ include('../header.php'); ?>
                 <div class="col-lg-7">
                     <div class="cchat">
                         <div class="cchat-box mb-4" data-video="trend">
-                            <a class="getThumbnail" href="expanded-ucla-pipeline.php"></a>
+                            <a class="getThumbnail" href="../expanded-ucla-pipeline.php"></a>
                             <div class="cchat-thumbnail thumbnail-overlay">
                                 <img src="//img.youtube.com/vi/RJYGOJSKKLk/maxresdefault.jpg" class="object-fit-contain" alt="Cancervax">
                             </div>
@@ -39,7 +39,7 @@ include('../header.php'); ?>
                 <div class="vCatBox">
                     <a href="#news-commentary">
                         <div class="vCatBox-thumb">
-                            <img src="./assets/img/news-commentary.png" alt="video">
+                            <img src="../assets/img/news-commentary.png" alt="video">
                         </div>
                         <span>News <br> Commentary</span>
                     </a>
@@ -49,7 +49,7 @@ include('../header.php'); ?>
                 <div class="vCatBox">
                     <a href="#ceo-podcast">
                         <div class="vCatBox-thumb">
-                            <img src="./assets/img/ceo-podcast.png" alt="video">
+                            <img src="../assets/img/ceo-podcast.png" alt="video">
                         </div>
                         <span>CEO Podcast</span>
                     </a>
@@ -59,7 +59,7 @@ include('../header.php'); ?>
                 <div class="vCatBox">
                     <a href="#cancer-survivor-stories">
                         <div class="vCatBox-thumb">
-                            <img src="./assets/img/cancer-survivor-stories.png" alt="video">
+                            <img src="../assets/img/cancer-survivor-stories.png" alt="video">
                         </div>
                         <span>Cancer Survivor <br>
                             Stories
@@ -71,7 +71,7 @@ include('../header.php'); ?>
                 <div class="vCatBox">
                     <a href="#short-videos">
                         <div class="vCatBox-thumb">
-                            <img src="./assets/img/short-videos.png" alt="video">
+                            <img src="../assets/img/short-videos.png" alt="video">
                         </div>
                         <span>Short
                             Videos
@@ -96,17 +96,21 @@ include('../header.php'); ?>
             });
             $latestCeoPodcast = array_slice($filteredlatestCeoPodcast, 0, 4);
             foreach ($latestCeoPodcast as $video) {
+                $temp1 = strtolower($video['title']);
+                $string = str_replace(' ', '-', $temp1);
                 echo "<div class=\"col-xl-3 col-lg-4 col-md-6\">
                 <div class=\"cchat\">
-                    <div class=\"cchat-box mb-4\">
-                    <a class=\"popup-youtube getThumbnail\" href=\"https://www.youtube.com/watch?v={$video['videoID']}\"></a>
+                <div class=\"cchat-box mb-4\">
+                <a class=\"popup-youtube getThumbnail\" href=\"https://www.youtube.com/watch?v={$video['videoID']}\"></a>
+                <a href=\"ceo-podcast/{$string}\"></a>
                     <div class=\"cchat-thumbnail thumbnail-overlay\">
+                    <img src=\"//img.youtube.com/vi/{$video['videoID']}/maxresdefault.jpg\" alt=\"Thumbnail\">
                     </div>
-                        <i class=\"far fa-play-circle\"></i>
-                    </div>
-                    <p class=\"mt-0\">{$video['date']} - {$video['title']}</p>
+                    <i class=\"far fa-play-circle\"></i>
+                </div>            
+                <p class=\"mt-0\" >{$video['date']} - {$video['title']}</p>
                 </div>
-            </div>";
+                </div>";
             }
             ?>
         </div>
@@ -126,17 +130,21 @@ include('../header.php'); ?>
             });
             $latestNewsCommentary = array_slice($filteredlatestNewsCommentary, 0, 4);
             foreach ($latestNewsCommentary as $video) {
+                $temp1 = strtolower($video['title']);
+                $string = str_replace(' ', '-', $temp1);
                 echo "<div class=\"col-xl-3 col-lg-4 col-md-6\">
                 <div class=\"cchat\">
-                    <div class=\"cchat-box mb-4\">
-                    <a class=\"popup-youtube getThumbnail\" href=\"https://www.youtube.com/watch?v={$video['videoID']}\"></a>
+                <div class=\"cchat-box mb-4\">
+                <a class=\"popup-youtube getThumbnail\" href=\"https://www.youtube.com/watch?v={$video['videoID']}\"></a>
+                <a href=\"news-commentary/{$string}\"></a>
                     <div class=\"cchat-thumbnail thumbnail-overlay\">
+                    <img src=\"//img.youtube.com/vi/{$video['videoID']}/maxresdefault.jpg\" alt=\"Thumbnail\">
                     </div>
-                        <i class=\"far fa-play-circle\"></i>
-                    </div>
-                    <p class=\"mt-0\">{$video['date']} - {$video['title']}</p>
+                    <i class=\"far fa-play-circle\"></i>
+                </div>            
+                <p class=\"mt-0\" >{$video['date']} - {$video['title']}</p>
                 </div>
-            </div>";
+                </div>";
             }
             ?>
 
@@ -160,11 +168,14 @@ include('../header.php'); ?>
             });
             $latestCancerSurvivorStories = array_slice($filteredlatestCancerSurvivorStories, 0, 4);
             foreach ($latestCancerSurvivorStories as $video) {
+                $temp1 = strtolower($video['title']);
+                $string = str_replace(' ', '-', $temp1);
                 echo "<div class=\"col-xl-3 col-lg-4 col-md-6\">
                 <div class=\"cchat\">
                     <div class=\"cchat-box mb-4\">
-                    <a class=\"popup-youtube getThumbnail\" href=\"https://www.youtube.com/watch?v={$video['videoID']}\"></a>
+                    <a href=\"cancer-survivor-stories/{$string}\"></a>
                     <div class=\"cchat-thumbnail thumbnail-overlay\">
+                    <img src=\"//img.youtube.com/vi/{$video['videoID']}/maxresdefault.jpg\" alt=\"Thumbnail\">
                     </div>
                         <i class=\"far fa-play-circle\"></i>
                     </div>
@@ -191,17 +202,21 @@ include('../header.php'); ?>
             });
             $latestCancerShortVideos = array_slice($filteredlatestShortVideos, 0, 4);
             foreach ($latestCancerShortVideos as $video) {
+                $temp1 = strtolower($video['title']);
+                $string = str_replace(' ', '-', $temp1);
                 echo "<div class=\"col-xl-3 col-lg-4 col-md-6\">
                 <div class=\"cchat\">
-                    <div class=\"cchat-box\">
-                    <a class=\"popup-youtube getThumbnail\" href=\"https://www.youtube.com/watch?v={$video['videoID']}\"></a>
+                <div class=\"cchat-box mb-4\">
+                <a class=\"popup-youtube getThumbnail\" href=\"https://www.youtube.com/watch?v={$video['videoID']}\"></a>
+                <a href=\"short-videos/{$string}\"></a>
                     <div class=\"cchat-thumbnail thumbnail-overlay\">
+                    <img src=\"//img.youtube.com/vi/{$video['videoID']}/maxresdefault.jpg\" alt=\"Thumbnail\">
                     </div>
-                        <i class=\"far fa-play-circle\"></i>
-                    </div>
-                    <p class=\"mt-0\">{$video['title']}</p>
+                    <i class=\"far fa-play-circle\"></i>
+                </div>            
+                <p class=\"mt-0\" >{$video['date']} - {$video['title']}</p>
                 </div>
-            </div>";
+                </div>";
             }
             ?>
 
