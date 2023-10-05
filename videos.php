@@ -2,6 +2,7 @@
 $GLOBALS['title'] = "Videos - CancerVax";
 $GLOBALS['desc'] = "";
 $GLOBALS['keywords'] = "";
+$videos = include "./data/podcast-data.php";
 include('header.php'); ?>
 
 <section class="cchatsbanner">
@@ -86,57 +87,28 @@ include('header.php'); ?>
     <div class="container">
         <div class="nCommentary-heading">
             <h3>CEO Podcast</h3>
-            <a href="/ceo-podcast">See All</a>
+            <a href="./ceo-podcast">See All</a>
         </div>
         <div class="row">
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="cchat">
-                    <div class="cchat-box mb-4">
-                        <a class="popup-youtube getThumbnail" href="https://www.youtube.com/watch?v=RJYGOJSKKLk"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
+            <?php
+            $filteredlatestCeoPodcast = array_filter($videos, function ($item) {
+                return $item['category'] === 'ceo-podcast' && $item['scope'] === 'public';
+            });
+            $latestCeoPodcast = array_slice($filteredlatestCeoPodcast, 0, 4);
+            foreach ($latestCeoPodcast as $video) {
+                echo "<div class=\"col-xl-3 col-lg-4 col-md-6\">
+                <div class=\"cchat\">
+                    <div class=\"cchat-box mb-4\">
+                    <a class=\"popup-youtube getThumbnail\" href=\"https://www.youtube.com/watch?v={$video['videoID']}\"></a>
+                    <div class=\"cchat-thumbnail thumbnail-overlay\">
                     </div>
-                    <p class="mt-0">CancerVAX CEO Discusses Expanded Pipeline at UCLA</p>
-
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="cchat">
-                    <div class="cchat-box mb-4">
-                        <a class="popup-youtube getThumbnail" href="https://www.youtube.com/watch?v=LTzE5Y78RrU"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
+                        <i class=\"far fa-play-circle\"></i>
                     </div>
-                    <p class="mt-0">August 14, 2023 - Steven Jonas - UCLA</p>
-
+                    <p class=\"mt-0\">{$video['date']} - {$video['title']}</p>
                 </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="cchat">
-                    <div class="cchat-box mb-4">
-                        <a class="popup-youtube getThumbnail" href="https://www.youtube.com/watch?v=nb4DZ-G49c8"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
-                    </div>
-                    <p class="mt-0">June 28 , 2023 - Lara Sullivan - Pyxis Oncology</p>
-
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="cchat">
-                    <div class="cchat-box mb-4">
-                        <a class="popup-youtube getThumbnail" href="https://www.youtube.com/watch?v=c123rkMsmVQ"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
-                    </div>
-                    <p class="mt-0">June 16, 2023 - Michael Smith - KalVista Pharmaceuticals</p>
-
-                </div>
-            </div>
+            </div>";
+            }
+            ?>
         </div>
     </div>
 </section>
@@ -145,57 +117,29 @@ include('header.php'); ?>
     <div class="container">
         <div class="nCommentary-heading">
             <h3>News Commentary</h3>
-            <a href="/news-commentary">See All</a>
+            <a href="./news-commentary">See All</a>
         </div>
         <div class="row">
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="cchat">
-                    <div class="cchat-box mb-4">
-                        <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=JUp6iwaYiyY"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
+            <?php
+            $filteredlatestNewsCommentary = array_filter($videos, function ($item) {
+                return $item['category'] === 'news-commentary' && $item['scope'] === 'public';
+            });
+            $latestNewsCommentary = array_slice($filteredlatestNewsCommentary, 0, 4);
+            foreach ($latestNewsCommentary as $video) {
+                echo "<div class=\"col-xl-3 col-lg-4 col-md-6\">
+                <div class=\"cchat\">
+                    <div class=\"cchat-box mb-4\">
+                    <a class=\"popup-youtube getThumbnail\" href=\"https://www.youtube.com/watch?v={$video['videoID']}\"></a>
+                    <div class=\"cchat-thumbnail thumbnail-overlay\">
                     </div>
-                    <p class="mt-0">September 16, 2023 - The Financial Burden</p>
-
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="cchat">
-                    <div class="cchat-box mb-4">
-                        <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=jB-J8DP7oDQ"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
+                        <i class=\"far fa-play-circle\"></i>
                     </div>
-                    <p class="mt-0">September 16, 2023 - A Monumental Meeting at UCLA</p>
-
+                    <p class=\"mt-0\">{$video['date']} - {$video['title']}</p>
                 </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="cchat">
-                    <div class="cchat-box mb-4">
-                        <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=6VT9poigwYA"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
-                    </div>
-                    <p class="mt-0">September 13, 2023 - Fighting Cancer with Microsoft AI</p>
+            </div>";
+            }
+            ?>
 
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="cchat">
-                    <div class="cchat-box mb-4">
-                        <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=oueUZrh_3-Y"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
-                    </div>
-                    <p class="mt-0">September 11, 2023 - Early Onset Cancer</p>
-
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -206,53 +150,29 @@ include('header.php'); ?>
     <div class="container">
         <div class="nCommentary-heading">
             <h3>Cancer Survivor Stories</h3>
-            <a href="/cancer-survivor-stories">See All</a>
+            <a href="./cancer-survivor-stories">See All</a>
         </div>
         <div class="row">
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="cchat">
-                    <div class="cchat-box mb-4">
-                        <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=0Bga027vcFc"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
+
+            <?php
+            $filteredlatestCancerSurvivorStories = array_filter($videos, function ($item) {
+                return $item['category'] === 'cancer-survivor-stories' && $item['scope'] === 'public';
+            });
+            $latestCancerSurvivorStories = array_slice($filteredlatestCancerSurvivorStories, 0, 4);
+            foreach ($latestCancerSurvivorStories as $video) {
+                echo "<div class=\"col-xl-3 col-lg-4 col-md-6\">
+                <div class=\"cchat\">
+                    <div class=\"cchat-box mb-4\">
+                    <a class=\"popup-youtube getThumbnail\" href=\"https://www.youtube.com/watch?v={$video['videoID']}\"></a>
+                    <div class=\"cchat-thumbnail thumbnail-overlay\">
                     </div>
-                    <p class="mt-0">August 15, 2023 - Paul Chretien - Colorectal Cancer</p>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="cchat">
-                    <div class="cchat-box mb-4">
-                        <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=n_Qrx_TbdAk"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
+                        <i class=\"far fa-play-circle\"></i>
                     </div>
-                    <p class="mt-0">August 22, 2023 - Paul Chretien - Colorectal Cancer</p>
+                    <p class=\"mt-0\">{$video['date']} - {$video['title']}</p>
                 </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="cchat">
-                    <div class="cchat-box mb-4">
-                        <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=y9gaBzk8c5g"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
-                    </div>
-                    <p class="mt-0">July 25, 2023 - Andrew Van Noy - Retinoblastoma</p>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="cchat">
-                    <div class="cchat-box mb-4">
-                        <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=bYhTlLSvwvU"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
-                    </div>
-                    <p class="mt-0">Jul 24, 2023 - Juli Mathews - Leukemia</p>
-                </div>
-            </div>
+            </div>";
+            }
+            ?>
         </div>
     </div>
 </section>
@@ -261,53 +181,29 @@ include('header.php'); ?>
     <div class="container">
         <div class="nCommentary-heading">
             <h3>Short Videos</h3>
-            <a href="/short-videos">See All</a>
+            <a href="./short-videos">See All</a>
         </div>
         <div class="row">
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="cchat">
-                    <div class="cchat-box">
-                        <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=1AJgWMvVbFQ"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
+
+            <?php
+            $filteredlatestShortVideos = array_filter($videos, function ($item) {
+                return $item['category'] === 'short-videos' && $item['scope'] === 'public';
+            });
+            $latestCancerShortVideos = array_slice($filteredlatestShortVideos, 0, 4);
+            foreach ($latestCancerShortVideos as $video) {
+                echo "<div class=\"col-xl-3 col-lg-4 col-md-6\">
+                <div class=\"cchat\">
+                    <div class=\"cchat-box\">
+                    <a class=\"popup-youtube getThumbnail\" href=\"https://www.youtube.com/watch?v={$video['videoID']}\"></a>
+                    <div class=\"cchat-thumbnail thumbnail-overlay\">
                     </div>
-                    <p>Tanner</p>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="cchat">
-                    <div class="cchat-box">
-                        <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=zSKKQfXCeuE"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
+                        <i class=\"far fa-play-circle\"></i>
                     </div>
-                    <p>The Cancer Treatment of the Future</p>
+                    <p class=\"mt-0\">{$video['title']}</p>
                 </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="cchat">
-                    <div class="cchat-box">
-                        <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=SBZzk5WvlmA"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
-                    </div>
-                    <p>Science Is Art</p>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
-                <div class="cchat">
-                    <div class="cchat-box">
-                        <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=NVfWbTW8DGg"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
-                    </div>
-                    <p>The Cost of Life-Saving Research</p>
-                </div>
-            </div>
+            </div>";
+            }
+            ?>
 
         </div>
     </div>
