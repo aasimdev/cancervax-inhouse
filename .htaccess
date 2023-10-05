@@ -4,6 +4,6 @@ RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php [NC,L] 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^videos/ceo-podcast/(.*)$ videos/ceo-podcast/index.php [L,QSA]
-RewriteRule ^videos/ceo-podcast/(.*)$ videos/cancer-survivor-stories/index.php [L,QSA]
-RewriteRule ^videos/ceo-podcast/(.*)$ videos/news-commentary/index.php [L,QSA]
-RewriteRule ^videos/ceo-podcast/(.*)$ videos/short-videos/index.php [L,QSA]
+RewriteRule ^videos/cancer-survivor-stories/(.*)$ videos/cancer-survivor-stories/index.php [L,QSA]
+RewriteRule ^videos/news-commentary/(.*)$ videos/news-commentary/index.php [L,QSA]
+RewriteRule ^videos/short-videos/(.*)$ videos/short-videos/index.php [L,QSA]
