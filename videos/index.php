@@ -29,7 +29,6 @@ include('../header.php'); ?>
                             </div>
                         </div>
                         <p class="mt-0">CancerVAX CEO Discusses Expanded Pipeline at UCLA</p>
-
                     </div>
                 </div>
             </div>

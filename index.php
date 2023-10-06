@@ -166,7 +166,7 @@ include('header.php'); ?>
         $filteredLatestCeoPodcast = array_filter($videos, function ($video) {
             $temp1 = strtolower($video['title']);
             $string = str_replace(' ', '-', $temp1);
-            $categories = ['ceo-podcast', 'cancer-survivor-stories', 'news-commentary'];
+            $categories = ['ceo-podcast']; // Add more categories if needed
 
             return in_array($video['category'], $categories);
         });

@@ -66,8 +66,8 @@ include('header.php'); ?>
 
         </div>
         <div class="pC-pipeline-item" id="ucvp">
-            <h4 style="margin-bottom:15px;">Universal Cancer Vaccine​ Platform </h4>
-            <div class="row align-items-center">
+            <h4 style="">Universal Cancer Vaccine​ Platform </h4>
+            <div class="row">
                 <div class="col-lg-7">
                     <p>We are developing a novel Universal Cancer Vaccine (UCV), to be delivered as a shot, that uses cutting-edge bioengineering and molecular technologies to <span>uniquely detect, mark and kill only cancer cells</span>. By forcing cancer cells to express a unique marker that healthy cells do not have, custom antibody drugs and the body’s immune system can target and destroy them with precision. Additionally, we intended to make cancer cell express protein markers associated with known diseases such as COVID, tetanus or measles. By doing so, we hope to leverage the body’s immune system to easily destroy cancer cells as if they were previous vaccinated common diseases. We have filed a patent application for the UCV and are working with the UCLA Jonsson Comprehensive Cancer Center to develop the platform, which may be administered as a one or two-shot treatment.</p>
                 </div>

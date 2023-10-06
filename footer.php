@@ -1,15 +1,15 @@
 <?php
 $page_name = basename($_SERVER['PHP_SELF']);
- // Get the current domain URL
- $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
- $domain = $_SERVER['HTTP_HOST'];
- $current_url = $protocol . "://" . $domain;
+// Get the current domain URL
+$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+$domain = $_SERVER['HTTP_HOST'];
+$current_url = $protocol . "://" . $domain;
 
- // Define your website name
- $website_name = "cancervax-inhuose";
+// Define your website name
+// $website_name = "cancervax-inhouse";
 
- // Combine the domain URL and website name
- $full_url = $current_url . "/" . $website_name;
+// Combine the domain URL and website name
+$full_url = $current_url . "/" . "cancervax-inhouse";
 if ($page_name != "index.php") {
 ?>
     <section class="newsletter">
