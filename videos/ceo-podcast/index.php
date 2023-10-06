@@ -1,5 +1,5 @@
 <?php
-$API_key    = 'AIzaSyC5BWeQzlcGORCD5LEWsdCF5tyUvMOgNaA';
+$API_key= 'AIzaSyC5BWeQzlcGORCD5LEWsdCF5tyUvMOgNaA';
 
 // Check if HTTPS is set and whether it's "on"
 $is_https = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on';
@@ -8,7 +8,7 @@ $is_https = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on';
 $protocol = $is_https ? 'https' : 'http';
 $current_url = $protocol . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $showAllVideo = 1;
-if($current_url !== 'http://localhost/cancervax-inhuose/videos/ceo-podcast/'){
+if($current_url !== 'http://localhost/cancervax-inhouse/videos/ceo-podcast/'){
     $showAllVideo = 0;
 }
 

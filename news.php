@@ -50,6 +50,17 @@ include('header.php'); ?>
             <!-- <a href="#">See All</a> -->
         </div>
         <div class="row">
+        <div class="col-lg-4 col-md-6">
+                <div class="cchat">
+                    <div class="cchat-box">
+                        <a class="popup-youtube getThumbnail" href="https://www.youtube.com/watch?v=UHdlK8SnWQ4"></a>
+                        <div class="cchat-thumbnail thumbnail-overlay">
+                        </div>
+                        <i class="far fa-play-circle"></i>
+                    </div>
+                    <p>October 3, 2023 - Nobel Prize goes to scientists behind mRNA Covid vaccines</p>
+                </div>
+            </div>
             <div class="col-lg-4 col-md-6">
                 <div class="cchat">
                     <div class="cchat-box">
@@ -98,64 +109,64 @@ include('header.php'); ?>
             <div class="col-lg-6">
                 <div class="news-item">
                     <a href="https://rescue.ceoblognation.com/2023/09/13/18-entrepreneurs-share-some-of-the-best-leadership-ceo-hacks-and-resources/" target="_blank"></a>
-                    <img src="./assets/img/news-logo-5.png" alt="news" class="news-logo-n">
-                    <span>September 26, 2023</span>
+                    <img src="./assets/img/news-logo-5.png" alt="news" class="news-logo-n" style="heiht:50px;">
+                    <span style="margin-top:13px;">September 26, 2023</span>
                     <h3>18 Entrepreneurs Share Some of The Best Leadership CEO Hacks and Resources</h3>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="news-item">
                     <a href="https://coruzant.com/health-tech/cancer-vaccines-where-are-we-now-and-where-are-we-going/" target="_blank"></a>
-                    <img src="./assets/img/news-logo-6.png" alt="news" class="news-logo-n">
-                    <span>September 23, 2023</span>
+                    <img src="./assets/img/news-logo-6.png" alt="news" class="news-logo-n" style="heiht:50px;">
+                    <span style="margin-top:15px;">September 23, 2023</span>
                     <h3>Cancer Vaccines: Where are We Now and Where are We Going?</h3>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="news-item">
                     <a href="https://coruzant.com/profiles/ryan-davies/" target="_blank"></a>
-                    <img src="./assets/img/news-logo-4.png" alt="news" class="news-logo-n">
-                    <span>August 14, 2023</span>
+                    <img src="./assets/img/news-logo-4.png" alt="news" class="news-logo-n" style="heiht:50px;">
+                    <span style="margin-top:13px;">August 14, 2023</span>
                     <h3>Serial Entrepreneur Using Science to Tackle the Biggest Disease with Founder Ryan Davies | Ep 693</h3>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="news-item">
                     <a href="https://www.labiotech.eu/in-depth/sarcoma-research-advances/" target="_blank"></a>
-                    <img src="./assets/img/news-logo-3.png" alt="news" class="news-logo-n">
-                    <span>July 24, 2023</span>
+                    <img src="./assets/img/news-logo-3.png" alt="news" class="news-logo-n" style="heiht:50px;">
+                    <span style="margin-top:25px;">July 24, 2023</span>
                     <h3>Labiotech: Sarcoma Research: Is a Breakthrough in Sight?</h3>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="news-item">
                     <a href="https://www.healthcarebusinesstoday.com/scientists-have-found-the-silver-bullet-for-pediatric-cancer/" target="_blank"></a>
-                    <img src="./assets/img/news-logo-2.png" alt="news" class="news-logo-n">
-                    <span>July 14, 2023</span>
+                    <img src="./assets/img/news-logo-2.png" alt="news" class="news-logo-n" style="heiht:50px;">
+                    <span style="margin-top:13px;">July 14, 2023</span>
                     <h3>Healthcare Business Today: Scientists Have Found The Silver Bullet for Pediatric Cancer</h3>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="news-item">
                     <a href="https://www.healthleadersmedia.com/pharma/cancervax-ceo-sees-home-run-breakthrough-universal-cancer-vaccine" target="_blank"></a>
-                    <img src="./assets/img/news-logo-1.png" alt="news" class="news-logo-n">
-                    <span>June 22, 2023</span>
+                    <img src="./assets/img/news-logo-1.png" alt="news" class="news-logo-n" style="heiht:50px;">
+                    <span style="margin-top:25px;">June 22, 2023</span>
                     <h3>HealthLeaders: CancerVax CEO Sees a Homerun With Breakthrough Cancer Vaccine</h3>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="news-item">
                     <a href="https://www.healthcarebusinesstoday.com/scientists-have-found-the-silver-bullet-for-pediatric-cancer/" target="_blank"></a>
-                    <img src="./assets/img/news-logo-2.png" alt="news" class="news-logo-n">
-                    <span>July 14, 2023</span>
+                    <img src="./assets/img/news-logo-2.png" alt="news" class="news-logo-n " style="heiht:50px;">
+                    <span style="margin-top:8px;">July 14, 2023</span>
                     <h3>Scientists Have Found The Silver Bullet For Pediatric Cancer</h3>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="news-item">
                     <a href="https://www.healthleadersmedia.com/pharma/cancervax-ceo-sees-home-run-breakthrough-universal-cancer-vaccine" target="_blank"></a>
-                    <img src="./assets/img/news-logo-1.png" alt="news" class="news-logo-n">
-                    <span>JUNE 22, 2023</span>
+                    <img src="./assets/img/news-logo-1.png" alt="news" class="news-logo-n" style="heiht:50px;">
+                    <span style="margin-top:23px;">JUNE 22, 2023</span>
                     <h3>CancerVax CEO Sees a Home Run With Breakthrough Universal Cancer Vaccine</h3>
                 </div>
             </div>

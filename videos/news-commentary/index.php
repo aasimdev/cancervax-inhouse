@@ -8,7 +8,7 @@ $is_https = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on';
 $protocol = $is_https ? 'https' : 'http';
 $current_url = $protocol . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $showAllVideo = 1;
-if($current_url !== 'http://localhost/cancervax-inhuose/videos/news-commentary/'){
+if($current_url !== 'http://localhost/cancervax-inhouse/videos/news-commentary/'){
     $showAllVideo = 0;
 }
 

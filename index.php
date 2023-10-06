@@ -2,6 +2,7 @@
 $GLOBALS['title'] = "CancerVax - Immunotherapy";
 $GLOBALS['desc'] = "";
 $GLOBALS['keywords'] = "";
+$videos = include "data/podcast-data.php";
 include('header.php'); ?>
 
 
@@ -159,270 +160,44 @@ include('header.php'); ?>
 
 <section class="pvRecent pt-5 pb-4">
     <div class="ceochats-carousel">
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=RJYGOJSKKLk"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/RJYGOJSKKLk/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>CancerVAX CEO Discusses Expanded Pipeline at UCLA</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=n_Qrx_TbdAk"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/n_Qrx_TbdAk/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>August 22, 2023 - Paul Chretien - Colorectal Cancer</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=LTzE5Y78RrU"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/LTzE5Y78RrU/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>August 14, 2023 - Steven Jonas - UCLA</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=T7vHpIKySWk"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/T7vHpIKySWk/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>August 13, 2023 - National Cancer Plan</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=vNserFeYYh4"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/vNserFeYYh4/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>August 9, 2023 - Onset Colon Cancer</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=y9gaBzk8c5g"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/y9gaBzk8c5g/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>July 25, 2023 - Andrew Van Noy - Retinoblastoma</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=bYhTlLSvwvU"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/bYhTlLSvwvU/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>Jul 24, 2023 - Juli Mathews - Leukemia</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=5gR8ssdsRgE"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/5gR8ssdsRgE/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>August 3, 2023 - Paul Reubens</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=PrKWO9o6IFE"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/PrKWO9o6IFE/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>July 13, 2023 - Rod Davies - Prostate Cancer</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=nb4DZ-G49c8"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/nb4DZ-G49c8/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>June 28 , 2023 - Lara Sullivan - Pyxis Oncology</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="https://www.youtube.com/watch?v=2jmJ2r0GKc0"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/2jmJ2r0GKc0/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>June 28, 2023 - Research Turning Point</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="https://www.youtube.com/watch?v=c123rkMsmVQ"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/kLHL6Sw-QDI/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>June 16, 2023 - Michael Smith - KalVista Pharmaceuticals</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=kLHL6Sw-QDI"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/kLHL6Sw-QDI/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>May 24, 2023 - Byron Elton - Prostate Cancer</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=fcAUnmxnmK4"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/fcAUnmxnmK4/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>May 24, 2023 - mRNA Vaccine</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=JHsQN8AMBbw"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/twJxMzdSS4A/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>May 24, 2023 - Raymond Vennare - Predictive Oncology Inc.</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=twJxMzdSS4A"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/twJxMzdSS4A/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>May 17, 2023 - Dr. Dinesh Patel - Xenocor, Inc.</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=W6FG-viYbKM"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/W6FG-viYbKM/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>Apr 20, 2023 - Stephen Diamond - LEXEO Therapeutics</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=QAFbMKCJcgk"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/QAFbMKCJcgk/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>Apr 12, 2023 - Dr. Satiro De Oliveira - UCLA</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=5LRM7n5IleQ"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/5LRM7n5IleQ/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>Mar 23, 2023 - Ryan looper - Curza</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=kS54nCFPPVM"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/kS54nCFPPVM/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>Mar 21, 2023 - Jonathan Lakey - XOStem, Inc</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=kTZYBVC_Gig"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/kTZYBVC_Gig/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>Mar 19, 2023 - Dr. David Bearss - Halia Therapeutics</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=OYoOgSZ8HK4"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/OYoOgSZ8HK4/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>Mar 15, 2023 - Todd Kinard - Curza</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=JbE5nKVJAMo"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/JbE5nKVJAMo/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p> Mar 15, 2023 - Partnered with Jonsson Comprehensive Cancer Center</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=rMhbq_yeWEg"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/rMhbq_yeWEg/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p> Mar 15, 2023 - Seeking Immunotherapy Solutions that Prevent Cancer</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=1tqn7-LXYfY"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/1tqn7-LXYfY/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>Unlike Any Other Industry - CancerVAX CEO Ryan Davies talks Biotech</p>
-        </div>
-        <div class="cchat">
-            <div class="cchat-box">
-                <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=O7-OAT0ejxE"></a>
-                <div class="cchat-thumbnail thumbnail-overlay">
-                    <img src="https://i.ytimg.com/vi/O7-OAT0ejxE/maxresdefault.jpg" alt="chat">
-                </div>
-                <i class="far fa-play-circle"></i>
-            </div>
-            <p>Mar 15, 2023 - Biomedical Research without Traditional Overhead Costs at CancerVA</p>
-        </div>
+        <?php
+        
+        // Filter and display the 5 most recent CEO podcast videos
+        $filteredLatestCeoPodcast = array_filter($videos, function ($video) {
+            $temp1 = strtolower($video['title']);
+            $string = str_replace(' ', '-', $temp1);
+            $categories = ['ceo-podcast', 'cancer-survivor-stories', 'news-commentary'];
 
+            return in_array($video['category'], $categories);
+        });
+
+        // Sort the filtered videos by date in descending order
+        usort($filteredLatestCeoPodcast, function ($a, $b) {
+            return strtotime($b['date']) - strtotime($a['date']);
+        });
+
+        // Get the 5 most recent CEO podcast videos
+        $latestCeoPodcast = array_slice($filteredLatestCeoPodcast, 0, 5);
+
+        // Display the filtered and sorted videos
+        foreach ($latestCeoPodcast as $video) :
+        ?>
+            <div class="cchat">
+                <div class="cchat-box">
+                    <a class="popup-youtube getThumbnail" href="https://www.youtube.com/watch?v=<?= $video['videoID'] ?>"></a>
+                    <div class="cchat-thumbnail thumbnail-overlay">
+                        <img src="//img.youtube.com/vi/<?= $video['videoID'] ?>/maxresdefault.jpg" alt="Thumbnail">
+                    </div>
+                    <i class="far fa-play-circle"></i>
+                </div>
+                <p><?= $video['date'] ?> - <?= $video['title'] ?></p>
+            </div>
+        <?php endforeach; ?>
     </div>
-
 </section>
+
+
+
 
 
 <section class="newsletter home-newsletter">

@@ -176,6 +176,13 @@ $videos = [
         'scope' => "public"
     ],
     [
+        'title' => "Nobel Prize goes to scientists behind mRNA Covid vaccines",
+        'videoID' => "UHdlK8SnWQ4",
+        'date' => "October 3, 2023",
+        'category' => "news-commentary",
+        'scope' => "public"
+    ],
+    [
         'title' => "mRNA Vaccine",
         'videoID' => "fcAUnmxnmK4",
         'date' => "May 24, 2023",
@@ -567,6 +574,7 @@ $videos = [
         'category' => "short-videos",
         'scope' => "public"
     ],
+   
 
 
 ];

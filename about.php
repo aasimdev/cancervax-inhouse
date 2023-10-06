@@ -127,7 +127,7 @@ include('header.php'); ?>
 <section class="coreTeam">
 
     <div class="container">
-    <h3 style="text-align:center;color:black;" >CancerVAX Team</h3>
+    <h3 style="text-align:center;color:black;margin-bottom:30px;" >CancerVAX Team</h3>
         <div class="row justify-content-center">
        
             <div class="col-md-6 col-xl-3">
@@ -209,7 +209,7 @@ include('header.php'); ?>
 
 <section class="otherteam">
     <div class="container">
-        <h3 style="text-align:center;" >UCLA Team</h3>
+        <h3 style="text-align:center;margin-bottom:35px;" >UCLA Team</h3>
         <div class="row justify-content-center">
             <div class="col-md-6 col-xl-4">
                 <div class="team-box">
