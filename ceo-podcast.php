@@ -24,7 +24,6 @@ include('header.php');
             <div class="abt-ceo-img">
                 <img src="./assets/img/Ryan-Davies.png" alt="ryan">
             </div>
-            <p>Watch our CEO, Ryan Davies, chat with leaders and experts in the biotech industry about trends, insights as well as progress with CancerVAX</p>
         </div>
     </div>
 </section>
