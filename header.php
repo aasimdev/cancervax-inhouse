@@ -27,7 +27,7 @@
     $current_url = $protocol . "://" . $domain;
 
     // Combine the domain URL and website name
-    $full_url = $current_url . "/";
+    $full_url = $current_url . '/' . "cancervax-inhouse/";
     ?>
     <title><?php echo $title; ?></title>
     <link rel="apple-touch-icon" sizes="114x114" href="<?php echo  $full_url; ?>/assets/img/favicon/apple-touch-icon.png">
