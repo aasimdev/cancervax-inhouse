@@ -125,6 +125,20 @@ if ($page_name != "index.php") {
     </div>
 </div>
 
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="./assets/img/pipeline-virus-2.png" alt="pipeline-virus-2">
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="./assets/js/jquery-3.1.1.min.js"></script>
 <script src="./assets/js/slick.min.js"></script>
 <script src="./assets/js/jquery.magnific-popup.min.js"></script>
