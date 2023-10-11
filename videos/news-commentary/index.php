@@ -7,10 +7,11 @@ $is_https = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on';
 // Construct the URL for the YouTube search
 $protocol = $is_https ? 'https' : 'http';
 $current_url = $protocol . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$current_url_check = $protocol . "://" . $_SERVER['HTTP_HOST'];
 $showAllVideo = 1;
-// if($current_url !== 'http://localhost/cancervax-inhouse/videos/news-commentary/'){
-//     $showAllVideo = 0;
-// }
+if($current_url !== $current_url_check . '/videos/news-commentary/'){
+    $showAllVideo = 0;
+}
 
 $parts = explode('/', rtrim(parse_url($current_url, PHP_URL_PATH), '/'));
 $lastPart = end($parts);
@@ -38,16 +39,13 @@ if($showAllVideo == 1){
  
 <section class="cchatsbanner">
     <div class="container">
-        <h1>Videos</h1>
+        <h1>News Commentary</h1>
     </div>
 </section>
 
 
 <section class="abtceo">
     <div class="container">
-        <div class="abtceo-heading">
-            <h2>News Commentary</h2>
-        </div>
         <div class="abtceo-wrap">
             <div class="abt-ceo-img">
                 <img src="../../assets/img/byron-cvax.png" alt="ryan">

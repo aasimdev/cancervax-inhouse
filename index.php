@@ -25,9 +25,9 @@ include('header.php'); ?>
 
                         <div class="banner-video">
                             <div class="banner-thumbnail">
-                                <img src="./assets/img/thumbnail.png" alt="thumbnail">
+                                <img src="https://i.ytimg.com/vi/IySdl6Eo0rw/maxresdefault.jpg" alt="thumbnail">
                             </div>
-                            <a href="http://www.youtube.com/watch?v=zbnhGW5Zz4c" class="theme-btn text-uppercase popup-youtube">
+                            <a href="http://www.youtube.com/watch?v=IySdl6Eo0rw" class="theme-btn text-uppercase popup-youtube">
                                 <i class="far fa-play-circle"></i>
                                 <span>Watch video</span>
                             </a>
@@ -161,7 +161,7 @@ include('header.php'); ?>
 <section class="pvRecent pt-5 pb-4">
     <div class="ceochats-carousel">
         <?php
-        
+
         // Filter and display the 5 most recent CEO podcast videos
         $filteredLatestCeoPodcast = array_filter($videos, function ($video) {
             $temp1 = strtolower($video['title']);

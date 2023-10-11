@@ -7,11 +7,12 @@ $is_https = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on';
 // Construct the URL for the YouTube search
 $protocol = $is_https ? 'https' : 'http';
 $current_url = $protocol . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$current_url_check = $protocol . "://" . $_SERVER['HTTP_HOST'];
+// print_r($current_url_check);
 $showAllVideo = 1;
-
-// if($current_url !== 'http://localhost/cancervax-inhouse/videos/ceo-podcast/'){
-//     $showAllVideo = 0;
-// }
+if($current_url !== $current_url_check . '/videos/ceo-podcast/'){
+    $showAllVideo = 0;
+}
 
 $parts = explode('/', rtrim(parse_url($current_url, PHP_URL_PATH), '/'));
 $lastPart = end($parts);
@@ -22,8 +23,6 @@ $videos = include "../../data/podcast-data.php";
 $filteredCEOPodcastVedios1 = array_filter($videos, function ($item) use ($vedioTitleFromURL) {
     return $item['category'] === 'ceo-podcast' && $item['scope'] === 'public' && strtolower($item['title']) === $vedioTitleFromURL;
 });
-
-
 
 $GLOBALS['title'] = $vedioTitleFromURL. " - CancerVax";
 $GLOBALS['desc'] = "";
@@ -37,16 +36,13 @@ if($showAllVideo == 1){
     
 <section class="cchatsbanner">
     <div class="container">
-        <h1>Videos</h1>
+        <h1>CEO Podcast</h1>
     </div>
 </section>
 
 
 <section class="abtceo">
     <div class="container">
-        <div class="abtceo-heading">
-            <h2>CEO Podcast</h2>
-        </div>
         <div class="abtceo-wrap">
             <div class="abt-ceo-img">
                 <img src="../../assets/img/Ryan-Davies.png" alt="ryan">
