@@ -9,7 +9,7 @@ $current_url = $protocol . "://" . $domain;
 // $website_name = "cancervax-inhouse";
 
 // Combine the domain URL and website name
-$full_url = $current_url . "/";
+$full_url = $current_url . '/' . "cancervax-inhouse/";
 if ($page_name != "index.php") {
 ?>
     <section class="newsletter">
