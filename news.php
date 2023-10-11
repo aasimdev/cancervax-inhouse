@@ -1,6 +1,7 @@
 <?php
 $GLOBALS['title'] = "Newsroom - CancerVax";
 $GLOBALS['desc'] = "";
+$videos = include "data/podcast-data.php";
 $GLOBALS['keywords'] = "";
 include('header.php'); ?>
 
@@ -42,7 +43,6 @@ include('header.php'); ?>
 </section>
 
 
-
 <section class="nCommentary">
     <div class="container">
         <div class="nCommentary-heading">
@@ -50,7 +50,28 @@ include('header.php'); ?>
             <!-- <a href="#">See All</a> -->
         </div>
         <div class="row">
-        <div class="col-lg-4 col-md-6">
+
+            <?php
+
+            $filteredLatestNewsCommentry= array_filter($videos, function ($video) {
+                $temp1 = strtolower($video['title']);
+                $string = str_replace(' ', '-', $temp1);
+                $categories = ['news-commentary']; // Add more categories if needed
+
+                return in_array($video['category'], $categories);
+            });
+
+            // Sort the filtered videos by date in descending order
+            usort($filteredLatestNewsCommentry, function ($a, $b) {
+                return strtotime($b['date']) - strtotime($a['date']);
+            });
+
+            // Get the 5 most recent CEO podcast videos
+            $NewCommentryLatest = array_slice($filteredLatestNewsCommentry, 0, 3);
+
+            foreach ($NewCommentryLatest as $video) :
+            ?>
+                 <div class="col-lg-4 col-md-6">
                 <div class="cchat">
                     <div class="cchat-box">
                         <a class="popup-youtube getThumbnail" href="https://www.youtube.com/watch?v=UHdlK8SnWQ4"></a>
@@ -58,54 +79,34 @@ include('header.php'); ?>
                         </div>
                         <i class="far fa-play-circle"></i>
                     </div>
-                    <p>October 3, 2023 - Nobel Prize goes to scientists behind mRNA Covid vaccines</p>
+                    <p><?= $video['date'] ?> - <?= $video['title'] ?></p>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="cchat">
-                    <div class="cchat-box">
-                        <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=JUp6iwaYiyY"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
-                    </div>
-                    <p>September 16, 2023 - The Financial Burden</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="cchat">
-                    <div class="cchat-box">
-                        <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=jB-J8DP7oDQ"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
-                    </div>
-                    <p>September 16, 2023 - A Monumental Meeting at UCLA</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="cchat">
-                    <div class="cchat-box">
-                        <a class="popup-youtube getThumbnail" href="http://www.youtube.com/watch?v=6VT9poigwYA"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
-                    </div>
-                    <p>September 13, 2023 - Fighting Cancer with Microsoft AI</p>
-                </div>
-            </div>
-
+            <?php endforeach;
+            ?>
         </div>
     </div>
 </section>
-
-
-
-
 <section class="news pb-0">
     <div class="container">
         <h4>CancerVAX In The News</h4>
         <div class="row">
+            <div class="col-lg-6">
+                <div class="news-item">
+                    <a href="https://www.pharmacytimes.com/view/challenges-and-opportunities-in-the-treatment-of-ewing-sarcoma" target="_blank"></a>
+                    <img src="./assets/img//pharmacy.png" alt="news" class="news-logo-n" style="heiht:50px;">
+                    <span style="margin-top:20px;">October 5, 2023</span>
+                    <h3>Challenges and Opportunities in the Treatment of Ewing Sarcoma</h3>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="news-item">
+                    <a href="https://www.pacbiztimes.com/2023/10/06/santa-barbara-firm-partners-with-ucla-for-new-cancer-treatments/" target="_blank"></a>
+                    <img src="./assets/img/pacific.png" alt="news" class="news-logo-n" style="heiht:50px;">
+                    <span style="margin-top:30px;">OCTOBER 6, 2023</span>
+                    <h3>Santa Barbara firm partners with UCLA for new cancer treatments</h3>
+                </div>
+            </div>
             <div class="col-lg-6">
                 <div class="news-item">
                     <a href="https://rescue.ceoblognation.com/2023/09/13/18-entrepreneurs-share-some-of-the-best-leadership-ceo-hacks-and-resources/" target="_blank"></a>

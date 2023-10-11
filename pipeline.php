@@ -57,7 +57,6 @@ include('header.php'); ?>
                     </ul>
                 </div>
                 <div class="col-lg-5">
-
                     <div class="pC-pipeline-img">
                         <img src="./assets/img/ewing-sarcoma.jpg" alt="ucva">
                     </div>
@@ -83,39 +82,37 @@ include('header.php'); ?>
             </div>
         </div>
         <div class="pC-pipeline-item" id="uctcp">
-        <h4>Universal CAR-T Cell Platform </h4>
+            <h4>Universal CAR-T Cell Platform </h4>
 
             <div class="pC-pipeline-c">
-           
+
                 <div class="row">
-               
+
                     <div class="col-lg-7">
                         <div class="pC-pipeline-text">
-                       
-            <p>Based on the foundational nanoparticle technology developed for UCV, we are developing a novel Universal CAR-T Cell therapy, to be delivered as a shot, that can reprogram natural immune T-cells inside the body to seek and destroy any targeted cancer cells.
-                <br><br>
-                CAR-T cell therapy is a type of FDA-approved immunotherapy in which a patient’s T-cells are genetically modified in the laboratory so they will bind to specific proteins (antigens) found on cancer cells and kill them. These modified T-cells are called Chimeric Antigen Receptor (CAR) T Cells. Conventional CAR-T Cell therapy can cost more than <span>$500,000 per dose</span> due to complicated and expensive lab processes. We believe we can dramatically <span>lower the cost to a few thousand dollars per dose</span> by simply helping the body make its own CAR T-cells.
-            </p>
+                            <p>Based on the foundational nanoparticle technology developed for UCV, we are developing a novel Universal CAR-T Cell therapy, to be delivered as a shot, that can reprogram natural immune T-cells inside the body to seek and destroy any targeted cancer cells.
+                                <br><br>
+                                CAR-T cell therapy is a type of FDA-approved immunotherapy in which a patient’s T-cells are genetically modified in the laboratory so they will bind to specific proteins (antigens) found on cancer cells and kill them. These modified T-cells are called Chimeric Antigen Receptor (CAR) T Cells. Conventional CAR-T Cell therapy can cost more than <span>$500,000 per dose</span> due to complicated and expensive lab processes. We believe we can dramatically <span>lower the cost to a few thousand dollars per dose</span> by simply helping the body make its own CAR T-cells.
+                            </p>
                             <h6>Conventional CAR-T Cell Therapy Steps:</h6>
                             <ul class="count-list">
-                                <p>A patient’s T cells are removed from their blood. </p>
-                                <p> The gene for a special receptor called chimeric antigen receptor (CAR) is inserted into the T cells in the laboratory by gene editing. The gene forces the T cell to express a protein (receptor) on its surface that binds to the cancer cell’s surface protein (antigen). </p>
-                                <p>Millions of CAR T cells are grown in the laboratory. </p>
-                                <p> They are then given to the patient by intravenous infusion. </p>
-                                <p>The CAR protein on the surface of the CAR T cells bind to antigens on the cancer cells and kill them. </p>
+                                <li>A patient’s T cells are removed from their blood. </li>
+                                <li> The gene for a special receptor called chimeric antigen receptor (CAR) is inserted into the T cells in the laboratory by gene editing. The gene forces the T cell to express a protein (receptor) on its surface that binds to the cancer cell’s surface protein (antigen). </li>
+                                <li>Millions of CAR T cells are grown in the laboratory. </li>
+                                <li> They are then given to the patient by intravenous infusion. </;>
+                                <li>The CAR protein on the surface of the CAR T cells bind to antigens on the cancer cells and kill them. </li>
                             </ul>
-
                             <h6>CancerVAX Envisioned CAR-T Cells Steps:</h6>
                             <ul class="count-list">
-                                <p>Genetic codes for targeting specific proteins on cancer cells are loaded into a smart nanoparticle using an innovative high-speed, low-cost manufacturing process. </p>
-                                <p>
-                                    Millions of nanoparticles are injected into the patient as a shot. The nanoparticles attach to the patient’s natural T-cells inside the body, unload the genetic code, and reprogram the T-cells to target specific cancer cells and kill them. </p>
+                                <li>Genetic codes for targeting specific proteins on cancer cells are loaded into a smart nanoparticle using an innovative high-speed, low-cost manufacturing process. </li>
+                                <li>
+                                    Millions of nanoparticles are injected into the patient as a shot. The nanoparticles attach to the patient’s natural T-cells inside the body, unload the genetic code, and reprogram the T-cells to target specific cancer cells and kill them. </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-5">
                         <div class="pC-pipeline-img">
-                            <img src="./assets/img/pipeline-virus-2.png" alt="pipeline-virus-2">
+                            <img src="./assets/img/pipeline-virus-2.png" alt="pipeline-virus-2" id="imageModalBtn">
                         </div>
                     </div>
                 </div>
@@ -123,6 +120,14 @@ include('header.php'); ?>
         </div>
     </div>
 </section>
+
+<!-- The modal -->
+<div id="imageModal" class="modal">
+    <span class="close" id="closeModal">&times;</span>
+    <div class="modal-container">
+        <img class="modal-image" id="modalImage" src="" alt="Image">
+    </div>
+</div>
 
 
 <!-- <section class="pipeline-steps">
@@ -228,6 +233,56 @@ include('header.php'); ?>
         </div>
     </div>
 </section> -->
+
+<script>
+    // Get the image and modal elements by ID
+    // Get the image and modal elements by ID
+    // Get the image and modal elements by ID
+    var imageModalBtn = document.getElementById('imageModalBtn');
+    var modal = document.getElementById('imageModal');
+    var modalImage = document.getElementById('modalImage');
+    var closeModal = document.getElementById('closeModal');
+
+    // Function to reset the image to its original state
+    function resetImage() {
+        modalImage.style.transform = 'scale(1)';
+        modalImage.style.marginTop = '0';
+        modal.style.overflow = 'hidden';
+    }
+
+    // Add a click event listener to the image to open the modal
+    imageModalBtn.addEventListener('click', function() {
+        modal.style.display = 'block';
+        modalImage.src = imageModalBtn.src;
+        modalImage.style.marginTop = '100px'; // Add margin-top
+    });
+
+    // Add a click event listener to the close button
+    closeModal.addEventListener('click', function() {
+        modal.style.display = 'none';
+        resetImage();
+    });
+
+    // Close the modal if the user clicks outside of the image
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+            resetImage();
+        }
+    });
+
+    // Add a click event listener to zoom in the image
+    modalImage.addEventListener('click', function() {
+        modalImage.style.transform = 'scale(1.5)';
+        modalImage.style.marginTop = '500px'; // Add margin-top
+        modal.style.overflow = 'auto'; // Enable scrolling
+    });
+
+    // Add a double-click event listener to reset the image
+    modalImage.addEventListener('dblclick', function() {
+        resetImage();
+    });
+</script>
 
 <?php
 include('footer.php'); ?>

@@ -93,6 +93,11 @@ include('../header.php'); ?>
             $filteredlatestCeoPodcast = array_filter($videos, function ($item) {
                 return $item['category'] === 'ceo-podcast' && $item['scope'] === 'public';
             });
+
+            usort($filteredlatestCeoPodcast, function ($a, $b) {
+                return strtotime($b['date']) - strtotime($a['date']);
+            });
+
             $latestCeoPodcast = array_slice($filteredlatestCeoPodcast, 0, 4);
             foreach ($latestCeoPodcast as $video) {
                 $temp1 = strtolower($video['title']);
@@ -176,6 +181,10 @@ include('../header.php'); ?>
             $filteredlatestCancerSurvivorStories = array_filter($videos, function ($item) {
                 return $item['category'] === 'cancer-survivor-stories' && $item['scope'] === 'public';
             });
+            usort($filteredlatestCancerSurvivorStories, function ($a, $b) {
+                return strtotime($b['date']) - strtotime($a['date']);
+            });
+
             $latestCancerSurvivorStories = array_slice($filteredlatestCancerSurvivorStories, 0, 4);
             foreach ($latestCancerSurvivorStories as $video) {
                 $temp1 = strtolower($video['title']);
@@ -210,6 +219,10 @@ include('../header.php'); ?>
             $filteredlatestShortVideos = array_filter($videos, function ($item) {
                 return $item['category'] === 'short-videos' && $item['scope'] === 'public';
             });
+            usort($filteredlatestShortVideos, function ($a, $b) {
+                return strtotime($b['date']) - strtotime($a['date']);
+            });
+            
             $latestCancerShortVideos = array_slice($filteredlatestShortVideos, 0, 4);
             foreach ($latestCancerShortVideos as $video) {
                 $temp1 = strtolower($video['title']);

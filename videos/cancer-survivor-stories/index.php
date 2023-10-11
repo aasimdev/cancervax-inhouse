@@ -109,7 +109,7 @@ else{
             <section class="podcast-detail">
             <div class="container">
                 <div class="podcast-detail-wrap">
-                <h1>'.$videoDate.' - ' . $videoTitle . ' </h1>
+                <h1>' . $videoTitle . ' </h1>
                     <p></p>
                      <div class="podcast-video">
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/' . $videoID . '?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

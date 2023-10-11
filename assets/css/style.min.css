@@ -11374,6 +11374,10 @@ body.modal-open {
   left: 0;
   top: 0;
 }
+
+/* Styles for the modal and background */
+
+
 /* .news-item .news-logo-n {
   margin-bottom: 26px;
   height: 50px !important;
