@@ -112,7 +112,7 @@ include('header.php'); ?>
                     </div>
                     <div class="col-lg-5">
                         <div class="pC-pipeline-img">
-                            <img src="./assets/img/pipeline-virus-2.png" alt="pipeline-virus-2" id="imageModalBtn">
+                            <img src="./assets/img/pipeline-virus-2.png" alt="pipeline-virus-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         </div>
                     </div>
                 </div>
@@ -234,7 +234,7 @@ include('header.php'); ?>
     </div>
 </section> -->
 
-<script>
+<!-- <script>
     // Get the image and modal elements by ID
     // Get the image and modal elements by ID
     // Get the image and modal elements by ID
@@ -282,7 +282,7 @@ include('header.php'); ?>
     modalImage.addEventListener('dblclick', function() {
         resetImage();
     });
-</script>
+</script> -->
 
 <?php
 include('footer.php'); ?>
