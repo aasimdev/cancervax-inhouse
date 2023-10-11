@@ -1,0 +1,26 @@
+.modal_img {
+
+    height: 100%;
+    width: 100%;
+}
+
+.btn-close {
+
+    font-size: 40px;
+    background: unset !important;
+    color: #fff;
+    opacity: 1 !important;
+}
+
+.modal-header{
+    display:block !important;
+}
+
+.btn-close:hover{
+    color: #fff;
+}
+
+.img_pipeline{
+
+    cursor: pointer !important;
+}

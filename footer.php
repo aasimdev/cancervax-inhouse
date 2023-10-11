@@ -129,11 +129,14 @@ if ($page_name != "index.php") {
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header pb-0">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+              
             </div>
             <div class="modal-body">
-                <img src="./assets/img/pipeline-virus-2.png" alt="pipeline-virus-2">
+                <img src="./assets/img/pipeline-virus-2.png" class="modal_img" alt="pipeline-virus-2">
             </div>
         </div>
     </div>

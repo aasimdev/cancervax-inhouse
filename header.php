@@ -41,56 +41,7 @@
     <link rel="stylesheet" href="<?php echo  $full_url; ?>/assets/css/slick.min.css">
     <link rel="stylesheet" href="<?php echo  $full_url; ?>/assets/css/slick-theme.min.css">
     <link rel="stylesheet" href="<?php echo  $full_url; ?>/assets/css/style.min.css">
-
-    <style>
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 100;
-            padding-top: 0;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.7);
-            /* Background overlay color */
-        }
-
-        .modal-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-        }
-
-        .modal-image {
-            max-width: 100%;
-            max-height: 160vh;
-            /* Adjust the height as needed */
-            object-fit: contain;
-            /* Ensure the image maintains its aspect ratio */
-            cursor: pointer;
-        }
-
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 54px;
-            font-weight: bold;
-            color: #fff;
-            cursor: pointer;
-        }
-    </style>
-
-    <script>
-        function hey() {
-
-            let img = "./assets/img/pipeline-virus-2.png";
-            alert(img);
-        }
-    </script>
+    <link rel="stylesheet" href="<?php echo  $full_url; ?>/assets/css/modal.style.css">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7D9TX20JND"></script>
