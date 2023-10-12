@@ -10,9 +10,9 @@ $current_url = $protocol . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI
 $current_url_check = $protocol . "://" . $_SERVER['HTTP_HOST'];
 // print_r($current_url_check);
 $showAllVideo = 1;
-if($current_url !== $current_url_check . '/videos/ceo-podcast/'){
-    $showAllVideo = 0;
-}
+// if($current_url !== $current_url_check . '/videos/ceo-podcast/'){
+//     $showAllVideo = 0;
+// }
 
 $parts = explode('/', rtrim(parse_url($current_url, PHP_URL_PATH), '/'));
 $lastPart = end($parts);

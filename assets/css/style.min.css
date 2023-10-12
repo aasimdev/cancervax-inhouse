@@ -10552,7 +10552,7 @@ a:hover {
 .banner-video .theme-btn {
   position: absolute;
   left: 50%;
-  bottom: 24px;
+  bottom: 36%;
   transform: translateX(-50%);
   padding: 8px 20px;
   background-color: red;
@@ -10871,11 +10871,11 @@ a:hover {
   width: 100%;
   margin: 0 auto 25px;
 }
-.team-box-img img {
+/* .team-box-img img {
   border-radius: 8px;
   height: 100%;
   width: 100%;
-}
+} */
 .team-box h5 {
   font-size: 14px;
   text-transform: uppercase;

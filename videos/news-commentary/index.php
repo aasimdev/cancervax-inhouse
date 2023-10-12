@@ -9,9 +9,9 @@ $protocol = $is_https ? 'https' : 'http';
 $current_url = $protocol . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $current_url_check = $protocol . "://" . $_SERVER['HTTP_HOST'];
 $showAllVideo = 1;
-if($current_url !== $current_url_check . '/videos/news-commentary/'){
-    $showAllVideo = 0;
-}
+// if($current_url !== $current_url_check . '/videos/news-commentary/'){
+//     $showAllVideo = 0;
+// }
 
 $parts = explode('/', rtrim(parse_url($current_url, PHP_URL_PATH), '/'));
 $lastPart = end($parts);
