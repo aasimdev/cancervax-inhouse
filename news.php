@@ -50,40 +50,29 @@ include('header.php'); ?>
             <!-- <a href="#">See All</a> -->
         </div>
         <div class="row">
-
             <?php
-
-            $filteredLatestNewsCommentry= array_filter($videos, function ($video) {
-                $temp1 = strtolower($video['title']);
-                $string = str_replace(' ', '-', $temp1);
-                $categories = ['news-commentary']; // Add more categories if needed
-
-                return in_array($video['category'], $categories);
+            $filteredlatestNewsCommentary = array_filter($videos, function ($item) {
+                return $item['category'] === 'news-commentary' && $item['scope'] === 'public';
             });
-
-            // Sort the filtered videos by date in descending order
-            usort($filteredLatestNewsCommentry, function ($a, $b) {
-                return strtotime($b['date']) - strtotime($a['date']);
-            });
-
-            // Get the 5 most recent CEO podcast videos
-            $NewCommentryLatest = array_slice($filteredLatestNewsCommentry, 0, 3);
-
-            foreach ($NewCommentryLatest as $video) :
-            ?>
-                 <div class="col-lg-4 col-md-6">
-                <div class="cchat">
-                    <div class="cchat-box">
-                        <a class="popup-youtube getThumbnail" href="https://www.youtube.com/watch?v=UHdlK8SnWQ4"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
+            $filteredLatestNewsCommentry = array_slice($filteredlatestNewsCommentary, 0, 3);
+            foreach ($filteredLatestNewsCommentry as $video) {
+                echo "<div class=\"col-lg-4 col-md-6\">
+                <div class=\"cchat\">
+                <div class=\"cchat-box\">
+                <a href=\"videos/news-commentary/{$video['slug']}\"></a>
+                    <div class=\"cchat-thumbnail thumbnail-overlay\">
+                    <img src=\"//img.youtube.com/vi/{$video['videoID']}/maxresdefault.jpg\" alt=\"Thumbnail\">
                     </div>
-                    <p><?= $video['date'] ?> - <?= $video['title'] ?></p>
+                    <i class=\"far fa-play-circle\"></i>
+                </div>            
+                <p>{$video['date']} - {$video['title']}</p>
                 </div>
-            </div>
-            <?php endforeach;
+                </div>";
+            }
             ?>
+
+
+
         </div>
     </div>
 </section>
@@ -91,6 +80,14 @@ include('header.php'); ?>
     <div class="container">
         <h4>CancerVAX In The News</h4>
         <div class="row">
+            <div class="col-lg-6">
+                <div class="news-item">
+                    <a href="https://valiantceo.com/ryan-davies-cancervax/" target="_blank"></a>
+                    <img src="./assets/img/news-logo-7.png" alt="news" class="news-logo-n" style="heiht:50px;">
+                    <span style="margin-top:20px;">October 12, 2023</span>
+                    <h3>Ryan Davies Shares Insights on CancerVAX and the Future of Cancer Treatment</h3>
+                </div>
+            </div>
             <div class="col-lg-6">
                 <div class="news-item">
                     <a href="https://www.pharmacytimes.com/view/challenges-and-opportunities-in-the-treatment-of-ewing-sarcoma" target="_blank"></a>

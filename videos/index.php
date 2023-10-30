@@ -20,7 +20,7 @@ include('../header.php'); ?>
                     <div class="cchat">
                         <div class="cchat-box mb-4" data-video="trend">
                             <a class="getThumbnail" href="../expanded-ucla-pipeline.php"></a>
-                            <div class="cchat-thumbnail thumbnail-overlay">
+                            <div class="cchat-thumbnail thumbnail-overlay h-auto">
                                 <img src="//img.youtube.com/vi/RJYGOJSKKLk/maxresdefault.jpg" class="object-fit-contain" alt="Cancervax">
                             </div>
                             <i class="far fa-play-circle"></i>
@@ -100,13 +100,11 @@ include('../header.php'); ?>
 
             $latestCeoPodcast = array_slice($filteredlatestCeoPodcast, 0, 4);
             foreach ($latestCeoPodcast as $video) {
-                $temp1 = strtolower($video['title']);
-                $string = str_replace(' ', '-', $temp1);
                 echo "<div class=\"col-xl-3 col-lg-4 col-md-6\">
                 <div class=\"cchat\">
                 <div class=\"cchat-box mb-4\">
                 <a class=\"popup-youtube getThumbnail\" href=\"https://www.youtube.com/watch?v={$video['videoID']}\"></a>
-                <a href=\"ceo-podcast/{$string}\"></a>
+                <a href=\"ceo-podcast/{$video['slug']}\"></a>
                     <div class=\"cchat-thumbnail thumbnail-overlay\">
                     <img src=\"//img.youtube.com/vi/{$video['videoID']}/maxresdefault.jpg\" alt=\"Thumbnail\">
                     </div>
@@ -137,21 +135,19 @@ include('../header.php'); ?>
             });
 
             // Sort the filtered videos by date in descending order
-            usort($filteredNewsCommentaryVideos, function ($a, $b) {
-                return strtotime($b['date']) - strtotime($a['date']);
-            });
+            // usort($filteredNewsCommentaryVideos, function ($a, $b) {
+            //     return strtotime($b['date']) - strtotime($a['date']);
+            // });
 
             // Take the latest 4 videos for "news-commentary"
             $latestNewsCommentary = array_slice($filteredNewsCommentaryVideos, 0, 4);
 
             foreach ($latestNewsCommentary as $video) {
-                $temp1 = strtolower($video['title']);
-                $string = str_replace(' ', '-', $temp1);
                 echo "<div class=\"col-xl-3 col-lg-4 col-md-6\">
             <div class=\"cchat\">
             <div class=\"cchat-box mb-4\">
             <a class=\"popup-youtube getThumbnail\" href=\"https://www.youtube.com/watch?v={$video['videoID']}\"></a>
-            <a href=\"news-commentary/{$string}\"></a>
+            <a href=\"news-commentary/{$video['slug']}\"></a>
                 <div class=\"cchat-thumbnail thumbnail-overlay\">
                 <img src=\"//img.youtube.com/vi/{$video['videoID']}/maxresdefault.jpg\" alt=\"Thumbnail\">
                 </div>
@@ -192,7 +188,7 @@ include('../header.php'); ?>
                 echo "<div class=\"col-xl-3 col-lg-4 col-md-6\">
                 <div class=\"cchat\">
                     <div class=\"cchat-box mb-4\">
-                    <a href=\"cancer-survivor-stories/{$string}\"></a>
+                    <a href=\"cancer-survivor-stories/{$video['slug']}\"></a>
                     <div class=\"cchat-thumbnail thumbnail-overlay\">
                     <img src=\"//img.youtube.com/vi/{$video['videoID']}/maxresdefault.jpg\" alt=\"Thumbnail\">
                     </div>
@@ -219,25 +215,29 @@ include('../header.php'); ?>
             $filteredlatestShortVideos = array_filter($videos, function ($item) {
                 return $item['category'] === 'short-videos' && $item['scope'] === 'public';
             });
-            usort($filteredlatestShortVideos, function ($a, $b) {
-                return strtotime($b['date']) - strtotime($a['date']);
-            });
-            
+            // usort($filteredlatestShortVideos, function ($a, $b) {
+            //     return strtotime($b['date']) - strtotime($a['date']);
+            // });
+
             $latestCancerShortVideos = array_slice($filteredlatestShortVideos, 0, 4);
             foreach ($latestCancerShortVideos as $video) {
-                $temp1 = strtolower($video['title']);
-                $string = str_replace(' ', '-', $temp1);
+             
+                if ($video['date'] === " ") {
+                    $title = $video['date'] - $video['title'];
+                } else {
+                    $title = $video['title'];
+                }
                 echo "<div class=\"col-xl-3 col-lg-4 col-md-6\">
                 <div class=\"cchat\">
                 <div class=\"cchat-box mb-4\">
                 <a class=\"popup-youtube getThumbnail\" href=\"https://www.youtube.com/watch?v={$video['videoID']}\"></a>
-                <a href=\"short-videos/{$string}\"></a>
+                <a href=\"short-videos/{$video['slug']}\"></a>
                     <div class=\"cchat-thumbnail thumbnail-overlay\">
                     <img src=\"//img.youtube.com/vi/{$video['videoID']}/maxresdefault.jpg\" alt=\"Thumbnail\">
                     </div>
                     <i class=\"far fa-play-circle\"></i>
                 </div>            
-                <p class=\"mt-0\" >{$video['date']} - {$video['title']}</p>
+                <p class=\"mt-0\" >{$title}</p>
                 </div>
                 </div>";
             }

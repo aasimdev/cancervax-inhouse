@@ -112,7 +112,7 @@ include('header.php'); ?>
                     </div>
                     <div class="col-lg-5">
                         <div class="pC-pipeline-img">
-                            <img src="./assets/img/pipeline-virus-2.png" class="img_pipeline" alt="pipeline-virus-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <img src="./assets/img/pipeline-virus-2.png" class="img_pipeline" alt="pipeline-virus-2" data-bs-toggle="modal" data-bs-target="#pipeline-img-preview">
                         </div>
                     </div>
                 </div>

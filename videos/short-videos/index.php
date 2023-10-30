@@ -1,5 +1,5 @@
 <?php
-$API_key = 'AIzaSyC5BWeQzlcGORCD5LEWsdCF5tyUvMOgNaA';
+$API_key    = 'AIzaSyC5BWeQzlcGORCD5LEWsdCF5tyUvMOgNaA';
 
 // Check if HTTPS is set and whether it's "on"
 $is_https = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on';
@@ -7,91 +7,107 @@ $is_https = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on';
 // Construct the URL for the YouTube search
 $protocol = $is_https ? 'https' : 'http';
 $current_url = $protocol . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$domain = $_SERVER['HTTP_HOST'];
 $current_url_check = $protocol . "://" . $_SERVER['HTTP_HOST'];
-
 $showAllVideo = 1;
+if ($domain === 'localhost' || $domain === '127.0.0.1') {
+    if($current_url !== 'http://localhost/cancervax/videos/short-videos/'){
+        $showAllVideo = 0;
+    }
+} else {
+    if($current_url !== $current_url_check . '/videos/short-videos/'){
+        $showAllVideo = 0;
+    }
+}
 
-$base_url = ($current_url === $current_url_check . '/videos/short-videos/') ? '' : '/cancervax-inhouse';
 
 $parts = explode('/', rtrim(parse_url($current_url, PHP_URL_PATH), '/'));
 $lastPart = end($parts);
-$videoTitleFromURL = str_replace('-', ' ', $lastPart);
+$vedioTitleFromURL = str_replace('-', ' ', $lastPart);
 
-$videos = include $_SERVER['DOCUMENT_ROOT'] . $base_url . "/data/podcast-data.php";
+// echo $vedioTitleFromURL;
 
-$filteredCEOPodcastVideos = array_filter($videos, function ($item) use ($videoTitleFromURL) {
-    return $item['category'] === 'short-videos' && $item['scope'] === 'public' && strtolower($item['title']) === $videoTitleFromURL;
+$videos = include "../../data/podcast-data.php";
+
+$filteredCEOPodcastVedios = array_filter($videos, function ($item) use ($lastPart) {
+    return $item['category'] === 'short-videos' && strtolower($item['slug']) === $lastPart;
 });
 
-$GLOBALS['title'] = $videoTitleFromURL . " - CancerVax";
+$GLOBALS['title'] = ucwords($vedioTitleFromURL). " - CancerVax";
 $GLOBALS['desc'] = "";
 $GLOBALS['keywords'] = "";
 
-include($_SERVER['DOCUMENT_ROOT'] . $base_url . '/header.php');
+include('../../header.php');
 
 // Check if there are search results
-if ($showAllVideo == 1) {
+if($showAllVideo == 1){
     ?>
-    <section class="cchatsbanner">
-        <div class "container">
-            <h1>Short Videos</h1>
-        </div>
-    </section>
+ <section class="cchatsbanner">
+    <div class="container">
+        <h1>Short Videos</h1>
+    </div>
+</section>
 
-    <section class="abtceo">
-        <div class="container">
-        </div>
-    </section>
+<section class="abtceo">
+    <div class="container">
+    </div>
+</section>
 
-    <section class="cchats shortVideos">
-        <div class="container">
-            <div class="row">
+<section class="cchats shortVideos">
+    <div class="container">
+        <div class="row">
 
-                <?php
-                $latestCancerShortVideos = array_filter($videos, function ($item) {
-                    return $item['category'] === 'short-videos' && $item['scope'] === 'public';
-                });
-                foreach ($latestCancerShortVideos as $video) {
-                    $temp1 = strtolower($video['title']);
-                    $string = str_replace(' ', '-', $temp1);
-                    echo "<div class=\"col-xl-3 col-lg-4 col-md-6\">
-                    <div class=\"cchat\">
-                    <div class=\"cchat-box mb-4\">
-                    <a class=\"popup-youtube getThumbnail\" href=\"https://www.youtube.com/watch?v={$video['videoID']}\"></a>
-                    <a href=\"{$string}\"></a>
+        <?php
+            $latestCancerShortVideos = array_filter($videos, function ($item) {
+                return $item['category'] === 'short-videos' && $item['scope'] === 'public';
+            });
+            foreach ($latestCancerShortVideos as $video) {
+                $temp1 = strtolower($video['title']);
+                $string = str_replace(' ', '-', $temp1);
+                if ($video['date'] === " ") {
+                    $title = $video['date'] - $video['title'];
+                } else {
+                    $title = $video['title'];
+                }
+                echo "<div class=\"col-xl-3 col-lg-4 col-md-6\">
+                <div class=\"cchat\">
+                <div class=\"cchat-box mb-4\">
+                <a class=\"popup-youtube getThumbnail\" href=\"https://www.youtube.com/watch?v={$video['videoID']}\"></a>
+                <a href=\"{$string}\"></a>
                     <div class=\"cchat-thumbnail thumbnail-overlay\">
                     <img src=\"//img.youtube.com/vi/{$video['videoID']}/maxresdefault.jpg\" alt=\"Thumbnail\">
                     </div>
                     <i class=\"far fa-play-circle\"></i>
-                    </div>
-                    <p class=\"mt-0\" >{$video['date']} - {$video['title']}</p>
-                    </div>
-                    </div>";
-                }
-                ?>
+                </div>            
+                <p class=\"mt-0\" >{$title}</p>
+                </div>
+                </div>";
+            }
+            ?>
 
-            </div>
         </div>
-    </section>
+    </div>
+</section>
     <?php
-} else {
-    if (count($filteredCEOPodcastVideos) > 0) {
-        // There are matching videos in $filteredCEOPodcastVideos
-        foreach ($filteredCEOPodcastVideos as $video) {
+}
+else{
+    if (count($filteredCEOPodcastVedios) > 0) {
+        // There are matching videos in $filteredCEOPodcastVedios
+        foreach ($filteredCEOPodcastVedios as $video) {
             // Display the matching videos
             $videoTitle = $video['title'];
             $videoID = $video['videoID'];
             $videoDate = $video['date'];
-
+          
             echo '
             <section class="podcast-detail">
             <div class="container">
                 <div class="podcast-detail-wrap">
-                    <h1>' . $videoTitle . ' </h1>
+                    <h1>'. $videoTitle . ' </h1>
                     <p></p>
-                    <div class="podcast-video">
+                     <div class="podcast-video">
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/' . $videoID . '?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
+                    </div> 
                 </div>
             </div>
         </section>
@@ -103,5 +119,5 @@ if ($showAllVideo == 1) {
     }
 }
 
-include($_SERVER['DOCUMENT_ROOT'] . $base_url . '/footer.php');
-?>
+include('../../footer.php');
+

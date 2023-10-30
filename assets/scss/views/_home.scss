@@ -1433,13 +1433,13 @@ body.modal-open {
             max-width: 500px;
 
             a {
-                background: #fff;
-                padding: 10px;
-                font-size: 17px;
-                border-radius: 10px;
-                font-weight: 600;
-                text-transform: uppercase;
-                border: 1px solid #208f97;
+                // background: #fff;
+                // padding: 10px;
+                // font-size: 17px;
+                // border-radius: 10px;
+                // font-weight: 600;
+                // text-transform: uppercase;
+                // border: 1px solid #208f97;
                 display: inline-block;
                 margin-top: 16px;
             }
@@ -1755,7 +1755,13 @@ label.error {
         margin-bottom: 0;
         padding-left: 15px;
         padding-right: 15px;
-
+        &-thumbnail{
+            height: auto;
+            img{
+                width: auto;
+                height: auto;
+            }
+        }
         p {
             margin-top: 16px;
             font-size: 20px;

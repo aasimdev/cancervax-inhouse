@@ -5,11 +5,12 @@ $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "
 $domain = $_SERVER['HTTP_HOST'];
 $current_url = $protocol . "://" . $domain;
 
-// Define your website name
-// $website_name = "cancervax-inhouse";
-
-// Combine the domain URL and website name
-$full_url = $current_url . '/' . "cancervax-inhouse/";
+// Check if the script is running on localhost
+if ($domain === 'localhost' || $domain === '127.0.0.1') {
+    $full_url = $current_url . '/cancervax/';
+} else {
+    $full_url = $current_url . '/';
+}
 if ($page_name != "index.php") {
 ?>
     <section class="newsletter">
@@ -126,30 +127,30 @@ if ($page_name != "index.php") {
 </div>
 
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+<div class="modal fade" id="pipeline-img-preview" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header text-end pb-0">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-              
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
             </div>
             <div class="modal-body">
-                <img src="./assets/img/pipeline-virus-2.png" class="modal_img" alt="pipeline-virus-2">
+                <img src="./assets/img/pipeline-virus-2-large.png" class="modal_img" alt="pipeline-virus-2">
             </div>
         </div>
     </div>
 </div>
 
-<script src="./assets/js/jquery-3.1.1.min.js"></script>
-<script src="./assets/js/slick.min.js"></script>
-<script src="./assets/js/jquery.magnific-popup.min.js"></script>
-<script src="./assets/js/particles.js"></script>
-<script src="./assets/js/bootstrap.bundle.min.js"></script>
-<script src="./assets/js/typed.min.js"></script>
+<script src="<?php echo  $full_url; ?>/assets/js/jquery-3.1.1.min.js"></script>
+<script src="<?php echo  $full_url; ?>/assets/js/slick.min.js"></script>
+<script src="<?php echo  $full_url; ?>/assets/js/jquery.magnific-popup.min.js"></script>
+<script src="<?php echo  $full_url; ?>/assets/js/particles.js"></script>
+<script src="<?php echo  $full_url; ?>/assets/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo  $full_url; ?>/assets/js/typed.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
-<script src="./assets/js/main.js"></script>
+<script src="<?php echo  $full_url; ?>/assets/js/main.js"></script>
 
 </body>
 

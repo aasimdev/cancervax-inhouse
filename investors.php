@@ -32,7 +32,9 @@ include('header.php'); ?>
                 </div>
                 <div class="invest-text">
                     <p>We have recently launched an SEC qualified $10 million offering at StartEngine, one of the largest online crowdfunding platforms.</p>
-                    <p>The offering is available to the general public, with a minimum investment of $500.00.  If you are interested in helping us beat cancer, please invest now at: <br> <a href="https://www.startengine.com/offering/cancervax" target="_blank">Invest Now</a></p>
+                    <p>The offering is available to the general public, with a minimum investment of $500.00.  If you are interested in helping us beat cancer, please invest now at: <br> <a href="https://www.startengine.com/offering/cancervax" target="_blank">
+                        <img src="./assets/img/invest-btn.svg" alt="button">
+                    </a></p>
                 </div>
             </div>
         </div>

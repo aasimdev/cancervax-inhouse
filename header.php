@@ -26,8 +26,12 @@
     $domain = $_SERVER['HTTP_HOST'];
     $current_url = $protocol . "://" . $domain;
 
-    // Combine the domain URL and website name
-    $full_url = $current_url . '/' . "cancervax-inhouse/";
+    // Check if the script is running on localhost
+    if ($domain === 'localhost' || $domain === '127.0.0.1') {
+        $full_url = $current_url . '/cancervax/';
+    } else {
+        $full_url = $current_url . '/';
+    }
     ?>
     <title><?php echo $title; ?></title>
     <link rel="apple-touch-icon" sizes="114x114" href="<?php echo  $full_url; ?>/assets/img/favicon/apple-touch-icon.png">
@@ -111,8 +115,20 @@
         <div class="container-fluid">
             <div class="invest-bar-content">
                 <div class="invest-bar-text">
-                    <p>Help us beat cancer!</p>
-                    <a href="https://www.startengine.com/offering/cancervax" target="_blank">Invest Now</a>
+                    <div class="invest-bar-text-wrap">
+                        <p>Closing on Nov 7th</p>
+                        <a href="https://www.startengine.com/offering/cancervax" target="_blank">
+                            <img src="<?php echo  $full_url; ?>/assets/img/invest-btn.svg" alt="invest button">
+                        </a>
+                    </div>
+                    <div id="countdown">
+                        <ul class="countdown-header">
+                            <li><span id="days"></span>Days</li>
+                            <li><span id="hours"></span>Hours</li>
+                            <li><span id="minutes"></span>Minutes</li>
+                            <li><span id="seconds"></span>Seconds</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="tSocial d-none d-lg-block">
                     <a href="https://www.facebook.com/people/Cancervax/100090179828482/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square"></i></a>

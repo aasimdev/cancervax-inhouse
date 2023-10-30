@@ -353,6 +353,9 @@
     .pC-pipeline-img {
         margin-top: 28px;
     }
+    .invest-bar-text{
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 767px) {
@@ -899,5 +902,8 @@
     }
     .podcast-video iframe {
         height: 260px;
+    }
+    .invest-bar-text-wrap {
+        gap: 5px;
     }
 }

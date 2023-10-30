@@ -2,7 +2,8 @@
 $GLOBALS['title'] = "CancerVax - Immunotherapy";
 $GLOBALS['desc'] = "";
 $GLOBALS['keywords'] = "";
-$videos = include "data/podcast-data.php";
+$videosCEOPodcast = include "data/podcast-data.php";
+$videos = include "data/carousel-videos.php";
 include('header.php'); ?>
 
 
@@ -72,7 +73,7 @@ include('header.php'); ?>
                     <div class="col-lg-9">
                         <div class="devPlan-conten">
                             <h6>Children’s Cancer </h6>
-                            <p>A disease-specific immunotherapy targeted at treating Ewing Sarcoma, a rare but deadly bone and soft tissue cancer that affects children and young adults. <span>Unfortunately, the death rate for patients with recurrent Ewing sarcoma is 100%.</span> </p>
+                            <p>A disease-specific immunotherapy targeted at treating Ewing sarcoma, a rare but deadly bone and soft tissue cancer that affects children and young adults. <span>Unfortunately, the death rate for patients with recurrent Ewing sarcoma is nearly 100%.</span> </p>
                         </div>
                     </div>
                 </div>
@@ -86,8 +87,8 @@ include('header.php'); ?>
                     </div>
                     <div class="col-lg-9">
                         <div class="devPlan-conten">
-                            <h6>Universal Cancer Vaccine​ Platform </h6>
-                            <p>A novel and customizable Universal Cancer Vaccine (UCV), to be delivered as a shot, that uses cutting-edge bioengineering and molecular technologies to uniquely detect, mark and kill only cancer cells. By forcing cancer cells to express a unique marker not found in healthy cells, custom antibody drugs and the body’s immune cells can target and destroy the cancer cells with precision. </p>
+                            <h6>Universal Cancer Vaccine​ Platform (UCV)</h6>
+                            <p>A novel and customizable Universal Cancer Vaccine, to be delivered as a shot, that uses cutting-edge bioengineering and molecular technologies to uniquely detect, mark and kill only cancer cells. By forcing cancer cells to express a unique marker not found in healthy cells, custom antibody drugs and the body’s immune cells can target and destroy the cancer cells with precision. </p>
                         </div>
                     </div>
                 </div>
@@ -101,11 +102,14 @@ include('header.php'); ?>
                     </div>
                     <div class="col-lg-9">
                         <div class="devPlan-conten">
-                            <h6>Universal CAR-T Cell Platform</h6>
+                            <h6>Universal CAR-T Cell Platform (UCAR-T)</h6>
                             <p>A novel and customizable low-cost treatment platform, to be delivered as a shot, that can reprogram natural immune T-cells inside the body to seek and destroy targeted cancer cells. These modified T-cells are called Chimeric Antigen Receptor (CAR) T Cells. Conventional CAR-T Cell therapy can cost more than $500,000 per dose due to complicated and expensive lab processes. Our goal is to lower the cost to a few thousand dollars per dose by helping the body make its own CAR T-cells. </p>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="devPlan-heading pt-4">
+                <p>UCV and UCAR-T can be used separately. However, when used together, we can kill cancer cells with extreme precision using the body’s immune system at very low costs. UCV detects and marks a unique target and UCAR-T makes T-cells attack that target.</p>
             </div>
         </div>
     </div>
@@ -162,25 +166,9 @@ include('header.php'); ?>
     <div class="ceochats-carousel">
         <?php
 
-        // Filter and display the 5 most recent CEO podcast videos
-        $filteredLatestCeoPodcast = array_filter($videos, function ($video) {
-            $temp1 = strtolower($video['title']);
-            $string = str_replace(' ', '-', $temp1);
-            $categories = ['ceo-podcast']; // Add more categories if needed
-
-            return in_array($video['category'], $categories);
-        });
-
-        // Sort the filtered videos by date in descending order
-        usort($filteredLatestCeoPodcast, function ($a, $b) {
-            return strtotime($b['date']) - strtotime($a['date']);
-        });
-
-        // Get the 5 most recent CEO podcast videos
-        $latestCeoPodcast = array_slice($filteredLatestCeoPodcast, 0, 5);
-
-        // Display the filtered and sorted videos
-        foreach ($latestCeoPodcast as $video) :
+        foreach ($videos as $video) :
+            $categoryName = ucwords(str_replace('-', ' ', $video['category']));
+            $categoryName = str_replace('Ceo', 'CEO', $categoryName);
         ?>
             <div class="cchat">
                 <div class="cchat-box">
@@ -190,7 +178,8 @@ include('header.php'); ?>
                     </div>
                     <i class="far fa-play-circle"></i>
                 </div>
-                <p><?= $video['date'] ?> - <?= $video['title'] ?></p>
+                <p><?= $categoryName ?> - <?= $video['title'] ?></p>
+
             </div>
         <?php endforeach; ?>
     </div>
@@ -475,54 +464,29 @@ include('header.php'); ?>
         </div>
 
         <div class="row">
-            <div class="col-lg-6">
-                <div class="cchat">
-                    <div class="cchat-box mb-4">
-                        <a class="popup-youtube getThumbnail" href="https://www.youtube.com/watch?v=RJYGOJSKKLk"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
+            <?php
+            $filteredlatestCeoPodcast = array_filter($videosCEOPodcast, function ($item) {
+                return $item['category'] === 'ceo-podcast' && $item['scope'] === 'public';
+            });
+            $latestCeoPodcast = array_slice($filteredlatestCeoPodcast, 0, 4);
+            foreach ($latestCeoPodcast as $video) {
+                $temp1 = strtolower($video['title']);
+                $string = str_replace(' ', '-', $temp1);
+                echo "<div class=\"col-lg-6\">
+                <div class=\"cchat\">
+                <div class=\"cchat-box mb-4\">
+                <a href=\"videos/ceo-podcast/{$string}\"></a>
+                    <div class=\"cchat-thumbnail thumbnail-overlay\">
+                    <img src=\"//img.youtube.com/vi/{$video['videoID']}/maxresdefault.jpg\" alt=\"Thumbnail\">
                     </div>
-                    <p class="mt-0">CancerVAX CEO Discusses Expanded Pipeline at UCLA</p>
+                    <i class=\"far fa-play-circle\"></i>
+                </div>            
+                <p class=\"mt-0\">{$video['date']} - {$video['title']}</p>
+                </div>
+                </div>";
+            };
+            ?>
 
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="cchat">
-                    <div class="cchat-box mb-4">
-                        <a class="popup-youtube getThumbnail" href="https://www.youtube.com/watch?v=LTzE5Y78RrU"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                        </div>
-                        <i class="far fa-play-circle"></i>
-                    </div>
-                    <p class="mt-0">August 14, 2023 - Steven Jonas - UCLA</p>
-
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="cchat">
-                    <div class="cchat-box">
-                        <a class="popup-youtube getThumbnail" href="https://www.youtube.com/watch?v=nb4DZ-G49c8"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                            <img src="https://i.ytimg.com/vi/nb4DZ-G49c8/maxresdefault.jpg" alt="chat">
-                        </div>
-                        <i class="far fa-play-circle"></i>
-                    </div>
-                    <p>June 28 , 2023 - Lara Sullivan - Pyxis Oncology</p>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="cchat">
-                    <div class="cchat-box">
-                        <a class="popup-youtube getThumbnail" href="https://www.youtube.com/watch?v=c123rkMsmVQ"></a>
-                        <div class="cchat-thumbnail thumbnail-overlay">
-                            <img src="https://i.ytimg.com/vi/kLHL6Sw-QDI/maxresdefault.jpg" alt="chat">
-                        </div>
-                        <i class="far fa-play-circle"></i>
-                    </div>
-                    <p>June 16, 2023 - Michael Smith - KalVista Pharmaceuticals</p>
-                </div>
-            </div>
         </div>
     </div>
 
