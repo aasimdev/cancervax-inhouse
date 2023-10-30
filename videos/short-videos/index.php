@@ -62,8 +62,6 @@ if($showAllVideo == 1){
                 return $item['category'] === 'short-videos' && $item['scope'] === 'public';
             });
             foreach ($latestCancerShortVideos as $video) {
-                $temp1 = strtolower($video['title']);
-                $string = str_replace(' ', '-', $temp1);
                 if ($video['date'] === " ") {
                     $title = $video['date'] - $video['title'];
                 } else {
@@ -73,7 +71,7 @@ if($showAllVideo == 1){
                 <div class=\"cchat\">
                 <div class=\"cchat-box mb-4\">
                 <a class=\"popup-youtube getThumbnail\" href=\"https://www.youtube.com/watch?v={$video['videoID']}\"></a>
-                <a href=\"{$string}\"></a>
+                <a href=\"{$video['slug']}\"></a>
                     <div class=\"cchat-thumbnail thumbnail-overlay\">
                     <img src=\"//img.youtube.com/vi/{$video['videoID']}/maxresdefault.jpg\" alt=\"Thumbnail\">
                     </div>
